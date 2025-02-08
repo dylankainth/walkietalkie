@@ -10,7 +10,60 @@ from math import sin, cos, sqrt, atan2, radians
 from itertools import permutations, product, combinations
 import requests
 
+app = FastAPI()
+load_dotenv("./.env")  # take environment variables from .env.
 
+#generate actual distance and route between starting and ending point
+def generate_route(origin, destination, waypoints, mode, api_key):
+    base_url = "https://maps.googleapis.com/maps/api/directions/json"
+    param = {
+        "origin": f"{origin[0]},{origin[1]}",
+        "destination": f"{destination[0]},{destination[1]}",
+        "waypoints": "|".join([f"{lat},{lon}" for lat, lon in waypoints]),
+        "mode": mode,
+        "key": api_key
+    }
+
+    response = requests.get(base_url, params = param)  
+    result = response.json()
+
+    
+    #print(result)
+
+    if result["status"] == "OK":
+        try:
+            # You can return the route details such as distance and duration here
+            legs = result["routes"][0]["legs"]
+            # List to hold all the turn-by-turn directions
+            turn_by_turn_directions = []
+
+            megaMapArray = []
+
+            # Loop through each leg and step
+            for leg in legs:
+                for step in leg["steps"]:
+                    # Append the instruction (HTML-formatted)
+                    turn_by_turn_directions.append(step["html_instructions"])
+                    megaMapArray.append([step['start_location'],step['end_location']])
+            
+            # Return the turn-by-turn directions
+
+            total_distance = sum(leg["distance"]["value"] for leg in legs) / 1000  # Convert to km
+            total_duration = sum(leg["duration"]["value"] for leg in legs) / 60  # Convert to minutes
+
+            hours = total_duration//60
+            minutes = round(total_duration%60)
+
+            return {  
+                "coordinates": megaMapArray,
+                "distance": total_distance,
+                "duration": total_duration,
+                "hours": hours,
+                "minutes": minutes
+            }
+        except (KeyError, IndexError):
+            return None
+    return None
 
 #get straight line distance between two coordinates
 def distanceKm(coord1,coord2):
@@ -100,8 +153,6 @@ def shortest_path_3(start,end,groups,expected_distance):
             min_distance,best_path = shortest_path_one_group(start,end,groups)
     return best_path,min_distance
 
-app = FastAPI()
-load_dotenv("./.env")  # take environment variables from .env.
 
 # MongoDB connection details
 MONGO_DETAILS = os.getenv("MONGODB_URI")  # Example: "mongodb://localhost:27017"
@@ -474,5 +525,12 @@ async def createRoute(request : Request):
                 print(f"{place['displayName']['text']} - {(place['location']['latitude'],place['location']['longitude'])}")
         except KeyError:
              print(typeresponse.status_code,typeresponse.json())
+    
+    path,distance = shortest_path_3(start_location,end_location,points,6)
+    start = path[0]
+    waypoint = path[1:-1]
+    destination = path[-1]
+
+    route = generate_route(start, destination, waypoint, "walking", GMAPS_API_KEY)
 
     return {"message": "Route created", "route": questionsList}
