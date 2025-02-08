@@ -72,5 +72,10 @@ async def getQuestions():
     #return all questions as json
     for question in questions:
         question['_id'] = str(question['_id'])
-        
+
     return {"body": questions}
+
+@app.post("/api/createRoute")
+def createRoute(questionsList: dict):
+    print(questionsList)
+    return {"message": "Route created", "route": questionsList}
