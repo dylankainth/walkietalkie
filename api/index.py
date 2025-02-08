@@ -1,7 +1,22 @@
 from fastapi import FastAPI
 import random
 from datetime import datetime
+from dotenv import load_dotenv
+import os
+from motor.motor_asyncio import AsyncIOMotorClient
+
 app = FastAPI()
+load_dotenv("./.env")  # take environment variables from .env.
+
+# MongoDB connection details
+MONGO_DETAILS = os.getenv("MONGODB_URI")  # Example: "mongodb://localhost:27017"
+MONGO_DBNAME= os.getenv("MONGODB_NAME")  # Example: "mydatabase"
+
+# MongoDB client and database
+client = AsyncIOMotorClient(MONGO_DETAILS)
+db = client.get_database(MONGO_DBNAME)  # Replace with your DB name if needed
+questions_collection = db.questions
+
 
 @app.get("/api")
 def hello_world():
@@ -38,3 +53,15 @@ def getRoutes():
     ]
 
     return {"body": routes}
+
+@app.get("/api/generateQuestion")
+async def generateQuestion():
+
+    # get all questions
+    questions = await questions_collection.find().to_list(length=1000)
+
+    ## convert list to string
+    questionString = str(questions)
+
+    #return all questions as json
+    return {"body": questionString}

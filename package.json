@@ -16,6 +16,7 @@
     "@vite-pwa/nuxt": "^0.10.6",
     "concurrently": "^8.2.2",
     "flowbite": "^3.1.2",
+    "mongodb": "^6.13.0",
     "nuxt": "^3.15.4",
     "vue": "latest",
     "vue-router": "latest"
