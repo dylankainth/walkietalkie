@@ -23,7 +23,7 @@ export default defineNuxtConfig({
       config: {
         routes: [{
           "src": "/pyapi/(.*)",
-          "dest": "api/index.py"
+          "dest": "pyapi/index.py"
         }]
       }
     },
