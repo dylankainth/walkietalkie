@@ -8,7 +8,6 @@
         </button>
 
 
-        {{ searchResults }}
     </div>
 </template>
 
@@ -31,15 +30,18 @@ export default {
             })
 
             this.searchResults = await searchQuery.json()
+            this.updateValue(this.searchResults)
 
+        },
+        updateValue(newValue) {
+
+            this.$emit('update:modelValue', newValue);
         }
     },
     props: {
-        pickedLocation: {
-            type: Object,
-            required: false
-        }
+        modelValue: Object,
     },
+    emits: ['update:modelValue']
 
 }
 </script>

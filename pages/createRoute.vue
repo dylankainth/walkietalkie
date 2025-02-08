@@ -70,7 +70,12 @@
                 <button @click="setEndLocationToStart" type="button"
                     class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                     Same as start</button>
-                <LocationPicker :pickedLocation="endLocation.data" />
+                <LocationPicker v-model="endLocation.data" />
+
+                <div class="pt-2" v-if="endLocation.data">
+                    <p class="text-gray-500">Latitude: {{ endLocation.data.coords.latitude }}</p>
+                    <p class="text-gray-500">Longitude: {{ endLocation.data.coords.longitude }}</p>
+                </div>
             </div>
         </div>
 
@@ -188,7 +193,7 @@ export default {
             }
         },
         setEndLocationToStart() {
-            this.endLocation.data = this.location.data
+            this.endLocation.data = this.location.data;
         },
         submitRoute() {
             // for each in questionList, make sure that the answer is not empty
@@ -211,7 +216,10 @@ export default {
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                        questionsList: this.questionsList
+                        questionsList: this.questionsList,
+                        startLocation: this.location.data,
+                        endLocation: this.endLocation.data,
+                        walkingDistance: this.walkingDistance
                     })
                 })
 

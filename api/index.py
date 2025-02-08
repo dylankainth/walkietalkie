@@ -1,4 +1,4 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 import random
 from datetime import datetime
 from dotenv import load_dotenv
@@ -421,11 +421,20 @@ def getPlaces(placeType: str,middle_location,radius):
 
 
 @app.post("/api/createRoute")
-def createRoute(questionsList: dict,start_location=(51.49803, -0.09012700),end_location = (51.518821,-0.1304266),radius = 2000):
+async def createRoute(request : Request):
+    requestData = await request.json()
+    startLocation = requestData['startLocation']
+    endLocation = requestData['endLocation']
+    questionsList = requestData['questionsList']
+    print(requestData)
     
+    start_location = (startLocation['coords']['latitude'],startLocation['coords']['longitude'])
+    end_location = (endLocation['coords']['latitude'],endLocation['coords']['longitude'])
+    radius= 2000
+
     systemprompt = f'You are planning a route between places. You must pick 3 place types from the list below to create a route based on a few questions. You must fulfil the wishes of the user based on their answers to the questions. Give your place types in a comma separated list with no other punctuation. Do not output anything else other than this list.\n\nPlace types:\n'
     systemprompt += f'{placetype_liststr}'
-    userprompt = "\n".join(["Question: "+question['questionText'] + '\n' + "Answer: "+(question['answer'] if type(question['answer']) == str else ", ".join(question['answer'])) for question in questionsList['questionsList']])
+    userprompt = "\n".join(["Question: "+question['questionText'] + '\n' + "Answer: "+(question['answer'] if type(question['answer']) == str else ", ".join(question['answer'])) for question in questionsList])
     #print(userprompt)
     #print(systemprompt)
     response = openAIClient.chat.completions.create(
