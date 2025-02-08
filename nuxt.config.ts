@@ -6,6 +6,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@vite-pwa/nuxt',
+    '@sidebase/nuxt-auth',
   ],
   routeRules: {
     '/api/**': {
@@ -17,6 +18,17 @@ export default defineNuxtConfig({
     '/openapi.json': {
       proxy: "http://127.0.0.1:8000/openapi.json",
     }
+  },
+  auth: {
+    baseURL: "/jsbackend/auth",
+    globalAppMiddleware: true,
+    provider: {
+      type: 'authjs',
+      trustHost: false,
+      defaultProvider: 'google',
+      addDefaultCallbackUrl: true,
+    },
+
   },
   nitro: {
     vercel: {
