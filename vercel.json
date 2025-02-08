@@ -4,20 +4,12 @@
         {
             "src": "pyapi/**/*.py",
             "use": "@vercel/python"
-        },
-        {
-            "src": "server/api/*",
-            "use": "@vercel/node"
         }
     ],
     "routes": [
         {
             "src": "/pyapi/(.*)",
             "dest": "/pyapi/$1.py"
-        },
-        {
-            "src": "/api/(.*)",
-            "dest": "/server/api/$1"
         }
     ]
 }
