@@ -4,6 +4,7 @@ from datetime import datetime
 from dotenv import load_dotenv
 import os
 from motor.motor_asyncio import AsyncIOMotorClient
+import json
 
 app = FastAPI()
 load_dotenv("./.env")  # take environment variables from .env.
@@ -58,7 +59,7 @@ def aiQuestion(prompt):
     return "What is the capital of France?"
 
 
-@app.get("/api/generateQuestion")
+@app.get("/api/generateQuestions")
 async def getQuestions():
 
     # get all questions
@@ -68,8 +69,8 @@ async def getQuestions():
         if questions[questionIndex]['aiGeneratedQuestion'] == True:
              questions[questionIndex]['questionText']  = aiQuestion(questions[questionIndex]['prompt'])   
         
-     ## convert list to string
-    questionString = str(questions)
-
     #return all questions as json
-    return {"body": questionString}
+    for question in questions:
+        question['_id'] = str(question['_id'])
+        
+    return {"body": questions}
