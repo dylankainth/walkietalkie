@@ -19,19 +19,19 @@ def getRoutes():
         },
          {
             "_id": 2,
-            "name": "Route 1",
+            "name": "Route 66",
             "timestamp": datetime.now().isoformat(),
             "city": "New York"
         },
          {
             "_id": 3,
-            "name": "Route 1",
+            "name": "Route 101",
             "timestamp": datetime.now().isoformat(),
             "city": "London"
         },
          {
             "_id": 4,
-            "name": "Route 1",
+            "name": "Route 53",
             "timestamp": datetime.now().isoformat(),
             "city": "Paris"
         }
