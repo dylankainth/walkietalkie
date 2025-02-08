@@ -6,7 +6,7 @@
             "use": "@vercel/python"
         },
         {
-            "src": "nuxt/**/api/*",
+            "src": "server/api/*",
             "use": "@vercel/node"
         }
     ],
@@ -17,7 +17,7 @@
         },
         {
             "src": "/api/(.*)",
-            "dest": "/nuxt/api/$1"
+            "dest": "/server/api/$1"
         }
     ]
 }
