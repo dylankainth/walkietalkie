@@ -6,6 +6,99 @@ import os
 from motor.motor_asyncio import AsyncIOMotorClient
 import json
 from openai import OpenAI
+from math import sin, cos, sqrt, atan2, radians
+from itertools import permutations, product, combinations
+import requests
+
+
+
+#get straight line distance between two coordinates
+def distanceKm(coord1,coord2):
+    # Approximate radius of earth in km
+    R = 6373.0
+
+    lat1 = radians(coord1[0])
+    lon1 = radians(coord1[1])
+    lat2 = radians(coord2[0])
+    lon2 = radians(coord2[1])
+
+    dlon = lon2 - lon1
+    dlat = lat2 - lat1
+
+    a = sin(dlat / 2)**2 + cos(lat1) * cos(lat2) * sin(dlon / 2)**2
+    c = 2 * atan2(sqrt(a), sqrt(1 - a))
+
+    distance = R * c
+    return distance
+
+#shortest path for 1 group
+def shortest_path_one_group(start, end, groups):
+    """Finds the shortest path from start to end, passing through one point from a single group."""
+    min_distance = float('inf')
+    best_path = None
+
+    # Iterate over each group
+    for group in groups:
+        # Iterate over each point in the selected group
+        for point in group:
+            # Compute total distance: Start → Chosen Point → End
+            distance = distanceKm(start, point) + distanceKm(point, end)
+
+            # Update shortest path if found
+            if distance < min_distance:
+                min_distance = distance
+                best_path = [start, point, end]
+
+    return min_distance, best_path
+
+#shortest path for 2 groups
+def shortest_path_2(start, end, groups):
+    """Finds the shortest path from start to end, choosing one point from two of the three groups."""
+    min_distance = float('inf')
+    best_path = None
+
+    # Select 2 out of the 3 groups
+    for group_indices in combinations(range(len(groups)), 2):
+        selected_groups = [groups[i] for i in group_indices]
+
+        # Pick one point from each of the selected 2 groups
+        for selection in product(*selected_groups):
+            # Generate all orderings of the selected points
+            for perm in permutations(selection):
+                # Compute total distance: Start → P1 → P2 → End
+                distance = distanceKm(start, perm[0]) + distanceKm(perm[0], perm[1]) + distanceKm(perm[1], end)
+
+                # Update shortest path if found
+                if distance < min_distance:
+                    min_distance = distance
+                    best_path = [start] + list(perm) + [end]
+
+    return min_distance, best_path
+
+
+#shortest path for 3 groups
+def shortest_path_3(start,end,groups,expected_distance):
+    min_distance = float('inf')
+    best_path = None
+    
+    # Generate all possible selections (one point per group)
+    for selection in product(*groups):
+        # Generate all permutations of the selected points
+        for perm in permutations(selection):
+            # Compute path distance
+            distance = sum(distanceKm(perm[i], perm[i+1]) for i in range(len(perm)-1))
+            distance += distanceKm(start,perm[0])
+            distance += distanceKm(perm[len(perm)-1],end)
+            if distance < min_distance:
+                min_distance = distance
+                best_path = perm
+    #if the path containing all 3 groups is too long
+    if expected_distance < min_distance:
+        min_distance,best_path = shortest_path_2(start,end,groups)
+        #if path containing 2 groups is too long
+        if min_distance > expected_distance:
+            min_distance,best_path = shortest_path_one_group(start,end,groups)
+    return best_path,min_distance
 
 app = FastAPI()
 load_dotenv("./.env")  # take environment variables from .env.
@@ -14,48 +107,13 @@ load_dotenv("./.env")  # take environment variables from .env.
 MONGO_DETAILS = os.getenv("MONGODB_URI")  # Example: "mongodb://localhost:27017"
 MONGO_DBNAME= os.getenv("MONGODB_NAME")  # Example: "mydatabase"
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+GMAPS_API_KEY = os.getenv("GMAPS_API_KEY")
 # MongoDB client and database
 client = AsyncIOMotorClient(MONGO_DETAILS)
 openAIClient = OpenAI(api_key=OPENAI_API_KEY)
 db = client.get_database(MONGO_DBNAME)  # Replace with your DB name if needed
 questions_collection = db.questions
 
-
-@app.get("/api")
-def hello_world():
-    return {"message": "Hello World", "api": "Python"}
-
-@app.get("/api/getRoutes")
-def getRoutes():
-
-    routes = [
-        {
-            "_id": 1,
-            "name": "Route 1",
-            "timestamp": datetime.now().isoformat(),
-            "city": "New York"
-        },
-         {
-            "_id": 2,
-            "name": "Route 66",
-            "timestamp": datetime.now().isoformat(),
-            "city": "New York"
-        },
-         {
-            "_id": 3,
-            "name": "Route 101",
-            "timestamp": datetime.now().isoformat(),
-            "city": "London"
-        },
-         {
-            "_id": 4,
-            "name": "Route 53",
-            "timestamp": datetime.now().isoformat(),
-            "city": "Paris"
-        }
-    ]
-
-    return {"body": routes}
 
 def getPlaceTypes():
     placetypes = """art_gallery
@@ -230,17 +288,59 @@ def getPlaceTypes():
     stadium
     swimming_pool"""
     placetypes = placetypes.splitlines()
-    placetypes = {" ".join([word.capitalize() for word in placetype.split("_")]) : placetype for placetype in placetypes}
+    placetypes = {" ".join([word.strip().capitalize() for word in placetype.strip().split("_")]) : placetype.strip() for placetype in placetypes}
     return placetypes
+
+placetype_dict = getPlaceTypes()
+placetype_liststr = "\n".join(placetype_dict.keys())
+
+
+@app.get("/api")
+def hello_world():
+    return {"message": "Hello World", "api": "Python"}
+
+@app.get("/api/getRoutes")
+def getRoutes():
+
+    routes = [
+        {
+            "_id": 1,
+            "name": "Route 1",
+            "timestamp": datetime.now().isoformat(),
+            "city": "New York"
+        },
+         {
+            "_id": 2,
+            "name": "Route 66",
+            "timestamp": datetime.now().isoformat(),
+            "city": "New York"
+        },
+         {
+            "_id": 3,
+            "name": "Route 101",
+            "timestamp": datetime.now().isoformat(),
+            "city": "London"
+        },
+         {
+            "_id": 4,
+            "name": "Route 53",
+            "timestamp": datetime.now().isoformat(),
+            "city": "Paris"
+        }
+    ]
+
+    return {"body": routes}
+
+
 
 
 def aiQuestion(seed: int ,staticQuestions: list):
-
+    return "Are you looking for indoor or outdoor activities?"
     print("seed: ", seed)
     #print("staticQuestions: ", staticQuestions)
-    placetypeliststr = "\n".join(getPlaceTypes().keys())
+    
     systemprompt = f'You are trying to help the user plan a route between places. The user will provide some sample questions to narrow down the place types they want to visit. Write 1 more sample question that can help narrow down the place types. Respond only a new sample question ending with a "?".\n\nPossible place types:\n'
-    systemprompt += f'{placetypeliststr}'
+    systemprompt += f'{placetype_liststr}'
     userprompt = "Sample questions:\n"
     userprompt += "\n".join((question['questionText'] for question in staticQuestions))
     
@@ -262,6 +362,11 @@ def aiQuestion(seed: int ,staticQuestions: list):
     output = response.choices[0].message.content.strip()
     return output
 
+@app.get("/api/testShortest3")
+def testShortest3():
+    path,distance = shortest_path_3(start_location,end_location,points,6)
+    print(path)
+    print(distance)
 
 @app.get("/api/generateQuestions")
 async def getQuestions():
@@ -285,7 +390,67 @@ async def getQuestions():
 
     return {"body": questions}
 
+
+
+def getPlaces(placeType: str):
+    url = f"https://places.googleapis.com/v1/places:searchNearby"
+
+    # Define the parameters for the request
+
+    data = {"includedTypes": [placeType],
+            "maxResultCount": 3,
+            "locationRestriction": {
+                "circle": {
+                    "center": {
+                        "latitude": middle_location[0],
+                        "longitude": middle_location[1]
+                        },
+                    "radius": radius}
+                }
+            }
+
+    headers = {
+        'X-Goog-FieldMask': '*',#'places.id,places.displayName,places.location',
+        "Content-Type": "application/json",
+        "X-Goog-Api-Key": gmapsapikey,
+    }
+
+    # Send the request to the Google Places API
+    response = requests.post(url,headers=headers,data=json.dumps(data))
+    return response
+
+
 @app.post("/api/createRoute")
-def createRoute(questionsList: dict):
-    print(questionsList)
+def createRoute(questionsList: dict,start_location=(51.49803, -0.09012700),end_location = (51.518821,-0.1304266),radius = 2000):
+    
+    systemprompt = f'You are planning a route between places. You must pick 3 place types from the list below to create a route based on a few questions. You must fulfil the wishes of the user based on their answers to the questions. Give your place types in a comma separated list with no other punctuation. Do not output anything else other than this list.\n\nPlace types:\n'
+    systemprompt += f'{placetype_liststr}'
+    userprompt = "\n".join(["Question: "+question['questionText'] + '\n' + "Answer: "+(question['answer'] if type(question['answer']) == str else ", ".join(question['answer'])) for question in questionsList['questionsList']])
+    #print(userprompt)
+    #print(systemprompt)
+    response = openAIClient.chat.completions.create(
+        messages=[
+            {
+            "role": "system",
+            "content": systemprompt,
+            },
+            {
+            "role": "user",
+            "content": userprompt,
+            },
+        ],
+        model="gpt-4o-mini",
+        max_completion_tokens=100
+    )
+    
+    genMsg = response.choices[0].message.content.strip()
+    generated_placetypes = set()
+    for placetype in (placetype.strip() for placetype in genMsg.split(",")):
+        placetypename = placetype_dict.get(placetype)
+        if placetypename != None:
+            generated_placetypes.add(placetypename)
+    print(generated_placetypes)
+
+    middle_location = ((start_location[0] + end_location[0])/2,(start_location[0] + end_location[0])/2)
+
     return {"message": "Route created", "route": questionsList}

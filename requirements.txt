@@ -4,3 +4,4 @@ python-dotenv
 motor==3.4.0
 pymongo==4.8.0
 openai==1.61.1
+requests

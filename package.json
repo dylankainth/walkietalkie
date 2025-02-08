@@ -12,6 +12,7 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxtjs/leaflet": "^1.2.6",
     "@sidebase/nuxt-auth": "^0.8.1",
     "@vite-pwa/nuxt": "^0.10.6",
     "concurrently": "^8.2.2",

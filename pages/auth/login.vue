@@ -24,8 +24,6 @@ const { signIn, status, data } = useAuth()
                         </div>
 
 
-
-
                     </div>
                 </div>
             </div>

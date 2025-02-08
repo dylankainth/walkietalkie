@@ -41,7 +41,7 @@ export default {
 
         </div>
 
-        <div v-if="loaded">
+        <div v-if="loaded" class="pb-20">
 
             <p class="text-3xl">Your routes</p>
             <p class="text-lg text-gray-500">The trips you've already planned</p>
