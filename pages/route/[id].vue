@@ -1,11 +1,8 @@
 <template>
 
     <div class="container mx-auto px-5 pt-3 pb-5">
-
-
         <p class="text-3xl">ROUTENAME</p>
         <p class="text-lg text-gray-500">ROUTECITY</p>
-
 
         <LMap style="height: 350px" :zoom="6" :center="[47.21322, -1.559482]" :use-global-leaflet="false">
             <LTileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -14,9 +11,6 @@
 
             <LPolyline :lat-lngs="megaRouteArray" color="green" />
         </LMap>
-
-
-
     </div>
 
 </template>

@@ -392,7 +392,7 @@ async def getQuestions():
 
 
 
-def getPlaces(placeType: str):
+def getPlaces(placeType: str,middle_location,radius):
     url = f"https://places.googleapis.com/v1/places:searchNearby"
 
     # Define the parameters for the request
@@ -412,7 +412,7 @@ def getPlaces(placeType: str):
     headers = {
         'X-Goog-FieldMask': '*',#'places.id,places.displayName,places.location',
         "Content-Type": "application/json",
-        "X-Goog-Api-Key": gmapsapikey,
+        "X-Goog-Api-Key": GMAPS_API_KEY,
     }
 
     # Send the request to the Google Places API
@@ -451,6 +451,19 @@ def createRoute(questionsList: dict,start_location=(51.49803, -0.09012700),end_l
             generated_placetypes.add(placetypename)
     print(generated_placetypes)
 
-    middle_location = ((start_location[0] + end_location[0])/2,(start_location[0] + end_location[0])/2)
+    middle_location = ((start_location[0] + end_location[0])/2,(start_location[1] + end_location[1])/2)
+    responses = {placetype: getPlaces(placetype,middle_location,radius) for placetype in generated_placetypes}
+
+    points = []
+    pointsmap = {start_location : 'START', end_location: 'END'}
+    for (placetype,typeresponse),_ in zip(responses.items(),range(3)):
+        try:
+            points.append([(place['location']['latitude'],place['location']['longitude']) for place in typeresponse.json()['places']])
+            print(placetype)
+            for place in typeresponse.json()['places']:
+                pointsmap[(place['location']['latitude'],place['location']['longitude'])] = place['displayName']['text']
+                print(f"{place['displayName']['text']} - {(place['location']['latitude'],place['location']['longitude'])}")
+        except KeyError:
+             print(typeresponse.status_code,typeresponse.json())
 
     return {"message": "Route created", "route": questionsList}

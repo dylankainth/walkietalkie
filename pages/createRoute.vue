@@ -18,8 +18,6 @@
                     </div>
                 </div>
 
-
-
                 <div v-if="location.status === 'loading'">
 
                     <div role="status">
@@ -52,6 +50,27 @@
                         <p class="text-red-500">Error getting location</p>
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <div class="pt-5">
+            <div class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm text-center">
+                <p class="font-bold text-lg text-gray-900">Get those steps in?</p>
+                <p class="text-gray-600 text-sm">Walking Distance: {{ walkingDistance < 1000 ? walkingDistance + 'm' :
+                    (walkingDistance / 1000).toFixed(1) + 'km' }}</p>
+                        <input id="default-range" type="range" v-model="walkingDistance" min="100" max="10000"
+                            step="100" class="w-full h-2 bg-gray-200 rounded-lg  cursor-pointer">
+            </div>
+        </div>
+
+
+        <div class="pt-5">
+            <div class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm text-center">
+                <p class="font-bold text-lg text-gray-900">Where would you like to end the tour?</p>
+                <button @click="setEndLocationToStart" type="button"
+                    class="text-white bg-blue-600 hover:bg-blue-700 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                    Same as start</button>
+                <LocationPicker :pickedLocation="endLocation.data" />
             </div>
         </div>
 
@@ -143,10 +162,14 @@ export default {
             loadedQuestions: false,
             loadedRoute: false,
             questionsList: [],
+            endLocation: {
+                data: null
+            },
             location: {
                 status: 'waiting',
                 data: null,
             },
+            walkingDistance: 2000
         }
     },
     methods: {
@@ -163,6 +186,9 @@ export default {
                 this.location.status = 'error';
                 console.error(err);
             }
+        },
+        setEndLocationToStart() {
+            this.endLocation.data = this.location.data
         },
         submitRoute() {
             // for each in questionList, make sure that the answer is not empty
