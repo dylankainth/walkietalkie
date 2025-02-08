@@ -7,6 +7,27 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@vite-pwa/nuxt',
   ],
+  routeRules: {
+    '/pyapi/**': {
+      proxy: process.env.NODE_ENV === "development" ? "http://127.0.0.1:8000/pyapi/**" : "/pyapi/**",
+    },
+    '/docs': {
+      proxy: "http://127.0.0.1:8000/docs",
+    },
+    '/openapi.json': {
+      proxy: "http://127.0.0.1:8000/openapi.json",
+    }
+  },
+  nitro: {
+    vercel: {
+      config: {
+        routes: [{
+          "src": "/pyapi/(.*)",
+          "dest": "api/index.py"
+        }]
+      }
+    },
+  },
   pwa: {
     manifest: {
       name: 'WalkieTalkie',

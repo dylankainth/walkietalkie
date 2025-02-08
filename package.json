@@ -4,13 +4,16 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "dev": "nuxt dev --no-fork",
+    "fastapi-dev": "pip install -r requirements.txt --break-system-packages && python3 -m uvicorn pyapi.index:app --reload",
+    "nuxt-dev": "nuxt dev --no-fork",
+    "dev": "concurrently \"npm run nuxt-dev\" \"npm run fastapi-dev\"",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
     "@vite-pwa/nuxt": "^0.10.6",
+    "concurrently": "^8.2.2",
     "flowbite": "^3.1.2",
     "nuxt": "^3.15.4",
     "vue": "latest",
