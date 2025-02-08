@@ -54,13 +54,21 @@ def getRoutes():
 
     return {"body": routes}
 
+def aiQuestion(prompt):
+    return "What is the capital of France?"
+
+
 @app.get("/api/generateQuestion")
-async def generateQuestion():
+async def getQuestions():
 
     # get all questions
     questions = await questions_collection.find().to_list(length=1000)
 
-    ## convert list to string
+    for questionIndex in range(0, len(questions)):
+        if questions[questionIndex]['aiGeneratedQuestion'] == True:
+             questions[questionIndex]['questionText']  = aiQuestion(questions[questionIndex]['prompt'])   
+        
+     ## convert list to string
     questionString = str(questions)
 
     #return all questions as json
