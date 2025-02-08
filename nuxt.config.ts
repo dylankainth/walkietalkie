@@ -18,16 +18,6 @@ export default defineNuxtConfig({
       proxy: "http://127.0.0.1:8000/openapi.json",
     }
   },
-  nitro: {
-    vercel: {
-      config: {
-        routes: [{
-          "src": "/pyapi/(.*)",
-          "dest": "pyapi/index.py"
-        }]
-      }
-    },
-  },
   pwa: {
     manifest: {
       name: 'WalkieTalkie',
