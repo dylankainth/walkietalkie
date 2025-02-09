@@ -24,7 +24,9 @@ from os.path import basename
 import base64
 import jwt
 
-ROUTE = None
+global ROUTES
+ROUTES = []
+
 
 app = FastAPI()
 load_dotenv("./.env")  # take environment variables from .env.
@@ -382,16 +384,21 @@ def hello_world():
 @app.get("/api/getRoutes")
 def getRoutes():
 
-    global ROUTE
-    routes = [ROUTE]
+    global ROUTES
+    return {"body": ROUTES}
 
-    if ROUTE == None:
-        routes = [{}]
+@app.get("/api/getRoute")
+def getRoute(route_id: str):
+    # get body of request
 
-    return {"body": routes}
+    global ROUTES
 
+    for route in ROUTES:
+        #print(route)
+        if route['route_id'] == route_id:
+            return {"body": route}
 
-
+    return {"body": {}}
 
 def aiQuestion(seed: int ,staticQuestions: list):
     return "Are you looking for indoor or outdoor activities?"
@@ -599,11 +606,13 @@ async def createRoute(request : Request):
     waypoint = path[1:-1]
     destination = path[-1]
 
-    global ROUTE
-    ROUTE = {'name': namestr,'city': locationName,'lines': generate_route(start, destination, waypoint, "walking", GMAPS_API_KEY)}
+    # generate a random number
+    route_id = uuid.uuid4().hex
 
-
-    return {"message": "Route created", "route": ROUTE,"status":"success"}
+    global ROUTES
+    ROUTES.append({'name': namestr, 'route_id': route_id, 'city': locationName,'lines': generate_route(start, destination, waypoint, "walking", GMAPS_API_KEY)})
+    
+    return {"message": "Route created", "route": "estset","status":"success"}
 
 
 def search_wikipedia(search_query):

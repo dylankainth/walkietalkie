@@ -59,7 +59,7 @@ export default {
 
 
             <div v-for="card in routesList" class="pt-2">
-                <NuxtLink :to="'/route/' + card._id"
+                <NuxtLink :to="'/route/' + card.route_id"
                     class="block max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-sm hover:bg-gray-100">
 
                     <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900">{{ card.name }}</h5>
