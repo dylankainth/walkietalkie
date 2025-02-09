@@ -9,6 +9,20 @@ from openai import OpenAI
 from math import sin, cos, sqrt, atan2, radians
 from itertools import permutations, product, combinations
 import requests
+import time
+import uuid
+from duckduckgo_search import DDGS
+import sys
+from api.podcastfy.podcastfy import client  # Import the client module
+import re
+import pathlib
+import io
+import dotenv
+import logging
+import zipfile
+from os.path import basename
+
+
 
 app = FastAPI()
 load_dotenv("./.env")  # take environment variables from .env.
@@ -473,15 +487,17 @@ def getPlaces(placeType: str,middle_location,radius):
 
 @app.post("/api/createRoute")
 async def createRoute(request : Request):
+
     requestData = await request.json()
     startLocation = requestData['startLocation']
     endLocation = requestData['endLocation']
     questionsList = requestData['questionsList']
-    print(requestData)
+    radius= requestData['walkingDistance']
+    #print(requestData)
     
     start_location = (startLocation['coords']['latitude'],startLocation['coords']['longitude'])
     end_location = (endLocation['coords']['latitude'],endLocation['coords']['longitude'])
-    radius= 2000
+    
 
     systemprompt = f'You are planning a route between places. You must pick 3 place types from the list below to create a route based on a few questions. You must fulfil the wishes of the user based on their answers to the questions. Give your place types in a comma separated list with no other punctuation. Do not output anything else other than this list.\n\nPlace types:\n'
     systemprompt += f'{placetype_liststr}'
@@ -527,10 +543,11 @@ async def createRoute(request : Request):
              print(typeresponse.status_code,typeresponse.json())
     
     path,distance = shortest_path_3(start_location,end_location,points,6)
+    print("Best Distance: "+distance)
     start = path[0]
     waypoint = path[1:-1]
     destination = path[-1]
 
     route = generate_route(start, destination, waypoint, "walking", GMAPS_API_KEY)
-
+    print(route)
     return {"message": "Route created", "route": questionsList}
