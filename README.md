@@ -1,13 +1,13 @@
-Walkie Talkie🤖
+Walkie Talkie 🤖
 
 What is Walkie Talkie?
-Walkie Talkie is a platform that generates a route for the user based on their preferences and location. It also provides an audio guide for each location that they will visit
+Walkie Talkie is a platform that generates a route for the user based on their preferences and location. It also provides an audio guide for each location that they will visit, this audio guide is generated using AI.
 
 Motivation:
-Planning a route to visit places in an unfamiliar city can be daunting for a tourist. In addition, audio guides often come with a reasonable cost. Therefore, we wanted to create a platform that does both tasks and with a cheaper cost as well
+Planning a route to visit places in an unfamiliar city can be daunting for a tourist. In addition, audio guides often come with a reasonable cost. Therefore, we wanted to create a platform that does both tasks and with a cheaper cost as well. 
 
 How to run it:
-Visit (whatever url we register)
+Visit (https://www.walkietalkie.us/)
 
 # Nuxt Minimal Starter
 

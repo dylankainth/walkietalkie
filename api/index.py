@@ -118,7 +118,7 @@ def short_path_one_group(start, end, groups,expected_distance):
                 if distance <= expected_distance:
                         return best_path,min_distance
 
-    return min_distance, best_path
+    return best_path,min_distance
 
 #shortest path for 2 groups
 def short_path_2(start, end, groups,expected_distance):
@@ -144,7 +144,7 @@ def short_path_2(start, end, groups,expected_distance):
                     if distance <= expected_distance:
                         return best_path,min_distance
 
-    return min_distance, best_path
+    return best_path,min_distance
 
 
 #shortest path for 3 groups
@@ -168,11 +168,10 @@ def short_path_3(start,end,groups,expected_distance):
                     return [start] + list(best_path)+ [end],min_distance
     #if the path containing all 3 groups is too long
     if expected_distance < min_distance:
-        min_distance,best_path = short_path_2(start,end,groups,expected_distance)
+        best_path,min_distance = short_path_2(start,end,groups,expected_distance)
         #if path containing 2 groups is too long
-        print(type(min_distance))
         if min_distance > expected_distance:
-            min_distance,best_path = short_path_one_group(start,end,groups,expected_distance)
+            best_path,min_distance = short_path_one_group(start,end,groups,expected_distance)
     return best_path,min_distance
 
 
@@ -483,7 +482,7 @@ def getPlaces(placeType: str,middle_location,radius):
             }
 
     headers = {
-        'X-Goog-FieldMask': '*',#'places.id,places.displayName,places.location',
+        'X-Goog-FieldMask': 'places.id,places.displayName,places.location,places.plusCode',
         "Content-Type": "application/json",
         "X-Goog-Api-Key": GMAPS_API_KEY,
     }
@@ -527,13 +526,13 @@ def searchPlaces(generated_placetypes,start_location, end_location, radius):
     pointsmap = {start_location : 'START', end_location: 'END'}
     for (placetype,typeresponse),_ in zip(responses.items(),range(3)):
         try:
-            print(placetype)
             currentType = []
             for place in typeresponse.json()['places']:
+                print(place)
                 loc = (place['location']['latitude'],place['location']['longitude'])
                 if loc not in pointsmap:
                     currentType.append(loc)
-                pointsmap[loc] = place['displayName']['text']
+                pointsmap[loc] = (place['displayName']['text'], " ".join(place['plusCode']['compoundCode'].split(" ")[1:]))
                 print(f"{place['displayName']['text']} - {loc}")
             if (len(currentType)):
                 points.append(currentType)
@@ -548,7 +547,6 @@ def generatePlaces(qnaText,start_location,end_location,radius):
         points = searchPlaces(generated_placetypes,start_location,end_location,radius)
         print(f"Num points: {len(points)}")
         if (len(points)):
-            print("POINT: " + str(points[0]))
             break
     return points
 
@@ -582,18 +580,32 @@ async def createRoute(request : Request):
                 path = None
         else:
             print(f"NO MATCHES, RETRYING ({retries+1})")
-        
+    
     if path == None:
         print("ALL RETRIES FAILED")
         return {"message":"No route found","status":"error"}
     
+    locationName = ""
+    try:
+        for point in path:
+            data = pointsmap.get(point)
+            if type(data) == tuple:
+                print("LOCATION: "+str(data[1]))
+                locationName = str(data[1])
+                break
+    except:
+        pass
+
+    namelist = [pointsmap.get(point) for point in path]
     print("PATH: " + str([pointsmap.get(point) for point in path]))
+
 
     start = path[0]
     waypoint = path[1:-1]
     destination = path[-1]
 
     route = generate_route(start, destination, waypoint, "walking", GMAPS_API_KEY)
+
     return {"message": "Route created", "route": route,"status":"success"}
 
 
