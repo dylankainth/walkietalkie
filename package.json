@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "nuxt build",
-    "fastapi-dev": "pip install -r requirements.txt --break-system-packages && python3 -m uvicorn api.index:app --reload",
+    "fastapi-dev": "pip install -r requirements.txt --break-system-packages && python3 -m uvicorn api.index:app --workers 4 --reload",
     "nuxt-dev": "nuxt dev --no-fork",
     "dev": "concurrently \"npm run nuxt-dev\" \"npm run fastapi-dev\"",
     "generate": "nuxt generate",
@@ -15,6 +15,7 @@
     "@nuxtjs/leaflet": "^1.2.6",
     "@sidebase/nuxt-auth": "^0.8.1",
     "@vite-pwa/nuxt": "^0.10.6",
+    "@vueuse/nuxt": "^12.5.0",
     "concurrently": "^8.2.2",
     "flowbite": "^3.1.2",
     "mongodb": "^6.13.0",

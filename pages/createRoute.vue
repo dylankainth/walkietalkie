@@ -195,7 +195,7 @@ export default {
         setEndLocationToStart() {
             this.endLocation.data = this.location.data;
         },
-        submitRoute() {
+        async submitRoute() {
             // for each in questionList, make sure that the answer is not empty
             const allQuestionsAnswered = this.questionsList.every(question => {
                 if (question.responseType === 'multipleChoiceMultiple') {
@@ -220,7 +220,7 @@ export default {
             } else {
                 this.loadedRoute = true
                 // send the answers to the server
-                fetch('/api/createRoute', {
+                const createRouteData = await fetch('/api/createRoute', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -232,6 +232,14 @@ export default {
                         walkingDistance: this.walkingDistance
                     })
                 })
+
+                const createRouteResponse = await createRouteData.json()
+
+                if (createRouteResponse.status === 'success') {
+                    this.$router.push(`/route/${createRouteResponse.body.routeId}`)
+                } else if (createRouteResponse.status === 'error') {
+                    this.$router.push(`/error`)
+                }
 
                 // route the user to the route they made from the id returned by the server
 

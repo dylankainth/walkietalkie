@@ -1,0 +1,77 @@
+[
+    {
+        "word": "Okay,",
+        "start_time": 0.046,
+        "end_time": 0.557
+    },
+    {
+        "word": "okay,",
+        "start_time": 0.94,
+        "end_time": 1.498
+    },
+    {
+        "word": "I'm",
+        "start_time": 1.823,
+        "end_time": 1.985
+    },
+    {
+        "word": "sold!",
+        "start_time": 2.043,
+        "end_time": 2.508
+    },
+    {
+        "word": "But",
+        "start_time": 3.46,
+        "end_time": 3.622
+    },
+    {
+        "word": "night",
+        "start_time": 3.68,
+        "end_time": 3.878
+    },
+    {
+        "word": "skiing?",
+        "start_time": 3.901,
+        "end_time": 4.423
+    },
+    {
+        "word": "Really?",
+        "start_time": 4.632,
+        "end_time": 5.19
+    },
+    {
+        "word": "Isn't",
+        "start_time": 5.515,
+        "end_time": 5.77
+    },
+    {
+        "word": "that,",
+        "start_time": 5.805,
+        "end_time": 5.956
+    },
+    {
+        "word": "like,",
+        "start_time": 5.991,
+        "end_time": 6.269
+    },
+    {
+        "word": "a",
+        "start_time": 6.339,
+        "end_time": 6.409
+    },
+    {
+        "word": "recipe",
+        "start_time": 6.49,
+        "end_time": 6.873
+    },
+    {
+        "word": "for",
+        "start_time": 6.931,
+        "end_time": 7.036
+    },
+    {
+        "word": "disaster?",
+        "start_time": 7.082,
+        "end_time": 7.755
+    }
+]

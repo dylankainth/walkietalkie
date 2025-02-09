@@ -7,7 +7,8 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@vite-pwa/nuxt',
     '@sidebase/nuxt-auth',
-    '@nuxtjs/leaflet'
+    '@nuxtjs/leaflet',
+    '@vueuse/nuxt',
   ],
   routeRules: {
     '/api/**': {

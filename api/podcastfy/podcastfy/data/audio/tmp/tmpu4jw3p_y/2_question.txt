@@ -1,0 +1,237 @@
+[
+    {
+        "word": "You",
+        "start_time": 0.046,
+        "end_time": 0.174
+    },
+    {
+        "word": "know",
+        "start_time": 0.255,
+        "end_time": 0.43
+    },
+    {
+        "word": "it!",
+        "start_time": 0.488,
+        "end_time": 0.778
+    },
+    {
+        "word": "Just",
+        "start_time": 1.289,
+        "end_time": 1.474
+    },
+    {
+        "word": "a",
+        "start_time": 1.509,
+        "end_time": 1.533
+    },
+    {
+        "word": "quick",
+        "start_time": 1.579,
+        "end_time": 1.741
+    },
+    {
+        "word": "25-minute",
+        "start_time": 1.8,
+        "end_time": 2.496
+    },
+    {
+        "word": "hop",
+        "start_time": 2.531,
+        "end_time": 2.694
+    },
+    {
+        "word": "from",
+        "start_time": 2.752,
+        "end_time": 2.868
+    },
+    {
+        "word": "Queenstown,",
+        "start_time": 2.937,
+        "end_time": 3.495
+    },
+    {
+        "word": "New",
+        "start_time": 3.518,
+        "end_time": 3.611
+    },
+    {
+        "word": "Zealand!",
+        "start_time": 3.669,
+        "end_time": 4.238
+    },
+    {
+        "word": "Prime",
+        "start_time": 4.841,
+        "end_time": 5.12
+    },
+    {
+        "word": "location,",
+        "start_time": 5.143,
+        "end_time": 5.642
+    },
+    {
+        "word": "stunning",
+        "start_time": 5.7,
+        "end_time": 6.084
+    },
+    {
+        "word": "views",
+        "start_time": 6.142,
+        "end_time": 6.362
+    },
+    {
+        "word": "of",
+        "start_time": 6.42,
+        "end_time": 6.478
+    },
+    {
+        "word": "Lake",
+        "start_time": 6.548,
+        "end_time": 6.699
+    },
+    {
+        "word": "Wakatipu",
+        "start_time": 6.734,
+        "end_time": 7.338
+    },
+    {
+        "word": "and",
+        "start_time": 7.384,
+        "end_time": 7.465
+    },
+    {
+        "word": "Lake",
+        "start_time": 7.546,
+        "end_time": 7.755
+    },
+    {
+        "word": "Hayes",
+        "start_time": 7.79,
+        "end_time": 8.115
+    },
+    {
+        "word": "-",
+        "start_time": 8.29,
+        "end_time": 8.324
+    },
+    {
+        "word": "it's",
+        "start_time": 8.533,
+        "end_time": 8.719
+    },
+    {
+        "word": "picture",
+        "start_time": 8.847,
+        "end_time": 9.3
+    },
+    {
+        "word": "perfect!",
+        "start_time": 9.392,
+        "end_time": 10.147
+    },
+    {
+        "word": "And",
+        "start_time": 10.588,
+        "end_time": 10.751
+    },
+    {
+        "word": "the",
+        "start_time": 10.797,
+        "end_time": 10.867
+    },
+    {
+        "word": "skiing?",
+        "start_time": 10.89,
+        "end_time": 11.389
+    },
+    {
+        "word": "Don't",
+        "start_time": 11.831,
+        "end_time": 12.028
+    },
+    {
+        "word": "even",
+        "start_time": 12.063,
+        "end_time": 12.214
+    },
+    {
+        "word": "get",
+        "start_time": 12.249,
+        "end_time": 12.353
+    },
+    {
+        "word": "me",
+        "start_time": 12.388,
+        "end_time": 12.458
+    },
+    {
+        "word": "started!",
+        "start_time": 12.516,
+        "end_time": 13.142
+    },
+    {
+        "word": "They've",
+        "start_time": 14.257,
+        "end_time": 14.501
+    },
+    {
+        "word": "got",
+        "start_time": 14.524,
+        "end_time": 14.675
+    },
+    {
+        "word": "everything:",
+        "start_time": 14.791,
+        "end_time": 15.453
+    },
+    {
+        "word": "long",
+        "start_time": 15.836,
+        "end_time": 16.091
+    },
+    {
+        "word": "snow",
+        "start_time": 16.149,
+        "end_time": 16.347
+    },
+    {
+        "word": "season,",
+        "start_time": 16.417,
+        "end_time": 16.951
+    },
+    {
+        "word": "varied",
+        "start_time": 17.194,
+        "end_time": 17.589
+    },
+    {
+        "word": "terrain...",
+        "start_time": 17.636,
+        "end_time": 18.355
+    },
+    {
+        "word": "perfect",
+        "start_time": 18.797,
+        "end_time": 19.215
+    },
+    {
+        "word": "for",
+        "start_time": 19.249,
+        "end_time": 19.354
+    },
+    {
+        "word": "all",
+        "start_time": 19.412,
+        "end_time": 19.563
+    },
+    {
+        "word": "skill",
+        "start_time": 19.632,
+        "end_time": 19.865
+    },
+    {
+        "word": "levels!",
+        "start_time": 19.911,
+        "end_time": 20.294
+    }
+]

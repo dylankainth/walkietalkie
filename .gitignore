@@ -23,3 +23,6 @@ logs
 .env.*
 !.env.example
 inferencetest.ipynb
+
+data/audio
+data/transcripts

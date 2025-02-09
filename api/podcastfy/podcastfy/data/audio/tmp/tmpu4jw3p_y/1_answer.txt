@@ -1,0 +1,77 @@
+[
+    {
+        "word": "Oh,",
+        "start_time": 0.035,
+        "end_time": 0.244
+    },
+    {
+        "word": "Coronet",
+        "start_time": 0.302,
+        "end_time": 0.708
+    },
+    {
+        "word": "Peak?",
+        "start_time": 0.755,
+        "end_time": 1.173
+    },
+    {
+        "word": "I've",
+        "start_time": 1.498,
+        "end_time": 1.66
+    },
+    {
+        "word": "heard",
+        "start_time": 1.683,
+        "end_time": 1.823
+    },
+    {
+        "word": "whispers.",
+        "start_time": 1.858,
+        "end_time": 2.531
+    },
+    {
+        "word": "Something",
+        "start_time": 2.856,
+        "end_time": 3.158
+    },
+    {
+        "word": "about",
+        "start_time": 3.193,
+        "end_time": 3.367
+    },
+    {
+        "word": "being",
+        "start_time": 3.402,
+        "end_time": 3.564
+    },
+    {
+        "word": "close",
+        "start_time": 3.611,
+        "end_time": 3.843
+    },
+    {
+        "word": "to",
+        "start_time": 3.878,
+        "end_time": 3.924
+    },
+    {
+        "word": "Queenstown?",
+        "start_time": 3.971,
+        "end_time": 4.644
+    },
+    {
+        "word": "Fill",
+        "start_time": 5.085,
+        "end_time": 5.271
+    },
+    {
+        "word": "me",
+        "start_time": 5.317,
+        "end_time": 5.41
+    },
+    {
+        "word": "in!",
+        "start_time": 5.48,
+        "end_time": 5.782
+    }
+]

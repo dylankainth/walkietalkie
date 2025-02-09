@@ -1,0 +1,87 @@
+[
+    {
+        "word": "World-class,",
+        "start_time": 0.058,
+        "end_time": 0.615
+    },
+    {
+        "word": "you",
+        "start_time": 0.639,
+        "end_time": 0.72
+    },
+    {
+        "word": "say?",
+        "start_time": 0.766,
+        "end_time": 1.184
+    },
+    {
+        "word": "Impressive.",
+        "start_time": 2.299,
+        "end_time": 3.077
+    },
+    {
+        "word": "So,",
+        "start_time": 3.402,
+        "end_time": 3.657
+    },
+    {
+        "word": "uh,",
+        "start_time": 3.692,
+        "end_time": 4.075
+    },
+    {
+        "word": "about",
+        "start_time": 4.354,
+        "end_time": 4.609
+    },
+    {
+        "word": "that",
+        "start_time": 4.644,
+        "end_time": 4.783
+    },
+    {
+        "word": "snow...",
+        "start_time": 4.853,
+        "end_time": 5.433
+    },
+    {
+        "word": "It",
+        "start_time": 6.246,
+        "end_time": 6.385
+    },
+    {
+        "word": "is",
+        "start_time": 6.42,
+        "end_time": 6.49
+    },
+    {
+        "word": "the",
+        "start_time": 6.536,
+        "end_time": 6.606
+    },
+    {
+        "word": "Southern",
+        "start_time": 6.653,
+        "end_time": 6.943
+    },
+    {
+        "word": "Hemisphere.",
+        "start_time": 6.989,
+        "end_time": 7.732
+    },
+    {
+        "word": "Is",
+        "start_time": 8.243,
+        "end_time": 8.406
+    },
+    {
+        "word": "it",
+        "start_time": 8.452,
+        "end_time": 8.51
+    },
+    {
+        "word": "reliable?",
+        "start_time": 8.545,
+        "end_time": 9.149
+    }
+]

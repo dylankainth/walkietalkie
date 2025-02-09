@@ -99,7 +99,7 @@ def distanceKm(coord1,coord2):
     return distance
 
 #shortest path for 1 group
-def shortest_path_one_group(start, end, groups):
+def short_path_one_group(start, end, groups,expected_distance):
     """Finds the shortest path from start to end, passing through one point from a single group."""
     min_distance = float('inf')
     best_path = None
@@ -115,11 +115,13 @@ def shortest_path_one_group(start, end, groups):
             if distance < min_distance:
                 min_distance = distance
                 best_path = [start, point, end]
+                if distance <= expected_distance:
+                        return best_path,min_distance
 
     return min_distance, best_path
 
 #shortest path for 2 groups
-def shortest_path_2(start, end, groups):
+def short_path_2(start, end, groups,expected_distance):
     """Finds the shortest path from start to end, choosing one point from two of the three groups."""
     min_distance = float('inf')
     best_path = None
@@ -139,12 +141,14 @@ def shortest_path_2(start, end, groups):
                 if distance < min_distance:
                     min_distance = distance
                     best_path = [start] + list(perm) + [end]
+                    if distance <= expected_distance:
+                        return best_path,min_distance
 
     return min_distance, best_path
 
 
 #shortest path for 3 groups
-def shortest_path_3(start,end,groups,expected_distance):
+def short_path_3(start,end,groups,expected_distance):
     min_distance = float('inf')
     best_path = None
     
@@ -159,12 +163,16 @@ def shortest_path_3(start,end,groups,expected_distance):
             if distance < min_distance:
                 min_distance = distance
                 best_path = perm
+                if distance <= expected_distance:
+                    
+                    return [start] + list(best_path)+ [end],min_distance
     #if the path containing all 3 groups is too long
     if expected_distance < min_distance:
-        min_distance,best_path = shortest_path_2(start,end,groups)
+        min_distance,best_path = short_path_2(start,end,groups,expected_distance)
         #if path containing 2 groups is too long
+        print(type(min_distance))
         if min_distance > expected_distance:
-            min_distance,best_path = shortest_path_one_group(start,end,groups)
+            min_distance,best_path = short_path_one_group(start,end,groups,expected_distance)
     return best_path,min_distance
 
 
@@ -531,7 +539,19 @@ def searchPlaces(generated_placetypes,start_location, end_location, radius):
                 points.append(currentType)
         except KeyError:
              print(typeresponse.status_code,typeresponse.json())
+    return points,pointsmap
+
+def generatePlaces(qnaText,start_location,end_location,radius):
+    for retries in range(3):
+        generated_placetypes = generatePlaceTypes(qnaText)
+        print(generated_placetypes)
+        points = searchPlaces(generated_placetypes,start_location,end_location,radius)
+        print(f"Num points: {len(points)}")
+        if (len(points)):
+            print("POINT: " + str(points[0]))
+            break
     return points
+
 
 @app.post("/api/createRoute")
 async def createRoute(request : Request):
@@ -540,28 +560,41 @@ async def createRoute(request : Request):
     startLocation = requestData['startLocation']
     endLocation = requestData['endLocation']
     questionsList = requestData['questionsList']
-    radius= requestData['walkingDistance']
+    radius= int(requestData['walkingDistance'])
     #print(requestData)
     
     start_location = (startLocation['coords']['latitude'],startLocation['coords']['longitude'])
     end_location = (endLocation['coords']['latitude'],endLocation['coords']['longitude'])
     
     qnaText = "\n".join(["Question: "+question['questionText'] + '\n' + "Answer: "+(question['answer'] if type(question['answer']) == str else ", ".join(question['answer'])) for question in questionsList])
-    generated_placetypes = generatePlaceTypes(qnaText)
-    print(generated_placetypes)
-    points = searchPlaces(generated_placetypes,start_location,end_location,radius)
-    print(f"Num points: {len(points)}")
     
+    path = None
+    for retries in range(3):
+        points,pointsmap = generatePlaces(qnaText,start_location,end_location,radius)
+        if (len(points)):
+            path,distance = short_path_3(start_location,end_location,points,radius/1000)
+
+            print("Best Distance: "+str(distance))
+            if (distance <= radius):
+                print("PATH FOUND!")
+                break
+            else:
+                path = None
+        else:
+            print(f"NO MATCHES, RETRYING ({retries+1})")
+        
+    if path == None:
+        print("ALL RETRIES FAILED")
+        return {"message":"No route found","status":"error"}
     
-    path,distance = shortest_path_3(start_location,end_location,points,6)
-    print("Best Distance: "+str(distance))
+    print("PATH: " + str([pointsmap.get(point) for point in path]))
+
     start = path[0]
     waypoint = path[1:-1]
     destination = path[-1]
 
     route = generate_route(start, destination, waypoint, "walking", GMAPS_API_KEY)
-    print(len(route['coordinates']))
-    return {"message": "Route created", "route": questionsList}
+    return {"message": "Route created", "route": route,"status":"success"}
 
 
 def search_wikipedia(search_query):
@@ -632,6 +665,7 @@ def get_most_relevant_page(query, titles):
     If no alternative matches or ambiguity exist, omit those sections.
     """
 
+    response = None
     # Make the request to OpenAI API
     try:
         response = openAIClient.chat.completions.create(
@@ -660,13 +694,15 @@ def get_most_relevant_page(query, titles):
     except Exception as e:
         # If parsing or any other error occurs, print the error message and the full response
         print("Error while parsing AI response: %s", e)
-        print("Full AI Response: %s", response)  # Log the full response for further analysis
+        if response != None:
+            print("Full AI Response: %s", response)  # Log the full response for further analysis
         return ""  # Fallback to empty data
 
-@app.get("/api/createLocationTrack")
-def createLocationTrack():
+@app.post("/api/createLocationTrack")
+async def createLocationTrack(request: Request):
 
-    place_name = "King's College, University of London"
+    requestData = await request.json()
+    place_name = requestData['place_name']
 
     # Search Wikipedia for URL
     wikipedia_search_url = search_wikipedia(place_name)

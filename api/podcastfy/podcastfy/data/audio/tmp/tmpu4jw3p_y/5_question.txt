@@ -1,0 +1,217 @@
+[
+    {
+        "word": "Two",
+        "start_time": 0.058,
+        "end_time": 0.232
+    },
+    {
+        "word": "meters",
+        "start_time": 0.29,
+        "end_time": 0.557
+    },
+    {
+        "word": "of",
+        "start_time": 0.604,
+        "end_time": 0.662
+    },
+    {
+        "word": "natural",
+        "start_time": 0.743,
+        "end_time": 1.068
+    },
+    {
+        "word": "snow",
+        "start_time": 1.126,
+        "end_time": 1.37
+    },
+    {
+        "word": "annually,",
+        "start_time": 1.463,
+        "end_time": 2.02
+    },
+    {
+        "word": "my",
+        "start_time": 2.043,
+        "end_time": 2.136
+    },
+    {
+        "word": "friend.",
+        "start_time": 2.206,
+        "end_time": 2.601
+    },
+    {
+        "word": "Plus,",
+        "start_time": 2.984,
+        "end_time": 3.529
+    },
+    {
+        "word": "they've",
+        "start_time": 3.657,
+        "end_time": 3.855
+    },
+    {
+        "word": "got",
+        "start_time": 3.878,
+        "end_time": 3.982
+    },
+    {
+        "word": "a",
+        "start_time": 4.017,
+        "end_time": 4.04
+    },
+    {
+        "word": "massive",
+        "start_time": 4.156,
+        "end_time": 4.632
+    },
+    {
+        "word": "snowmaking",
+        "start_time": 4.69,
+        "end_time": 5.236
+    },
+    {
+        "word": "system",
+        "start_time": 5.294,
+        "end_time": 5.573
+    },
+    {
+        "word": "to",
+        "start_time": 5.608,
+        "end_time": 5.654
+    },
+    {
+        "word": "keep",
+        "start_time": 5.689,
+        "end_time": 5.828
+    },
+    {
+        "word": "things",
+        "start_time": 5.875,
+        "end_time": 6.095
+    },
+    {
+        "word": "powdery",
+        "start_time": 6.246,
+        "end_time": 6.676
+    },
+    {
+        "word": "perfect!",
+        "start_time": 6.792,
+        "end_time": 7.465
+    },
+    {
+        "word": "They're",
+        "start_time": 7.976,
+        "end_time": 8.197
+    },
+    {
+        "word": "not",
+        "start_time": 8.22,
+        "end_time": 8.313
+    },
+    {
+        "word": "messing",
+        "start_time": 8.371,
+        "end_time": 8.638
+    },
+    {
+        "word": "around!",
+        "start_time": 8.673,
+        "end_time": 9.207
+    },
+    {
+        "word": "And",
+        "start_time": 9.648,
+        "end_time": 9.776
+    },
+    {
+        "word": "the",
+        "start_time": 9.822,
+        "end_time": 9.892
+    },
+    {
+        "word": "season",
+        "start_time": 9.927,
+        "end_time": 10.228
+    },
+    {
+        "word": "usually",
+        "start_time": 10.298,
+        "end_time": 10.577
+    },
+    {
+        "word": "goes",
+        "start_time": 10.623,
+        "end_time": 10.82
+    },
+    {
+        "word": "from",
+        "start_time": 10.879,
+        "end_time": 11.041
+    },
+    {
+        "word": "June",
+        "start_time": 11.157,
+        "end_time": 11.691
+    },
+    {
+        "word": "to",
+        "start_time": 11.819,
+        "end_time": 11.947
+    },
+    {
+        "word": "early",
+        "start_time": 12.04,
+        "end_time": 12.318
+    },
+    {
+        "word": "October",
+        "start_time": 12.376,
+        "end_time": 12.841
+    },
+    {
+        "word": "-",
+        "start_time": 13.015,
+        "end_time": 13.05
+    },
+    {
+        "word": "sometimes",
+        "start_time": 13.491,
+        "end_time": 14.129
+    },
+    {
+        "word": "late",
+        "start_time": 14.245,
+        "end_time": 14.478
+    },
+    {
+        "word": "September!",
+        "start_time": 14.512,
+        "end_time": 15.221
+    },
+    {
+        "word": "That's",
+        "start_time": 15.662,
+        "end_time": 15.906
+    },
+    {
+        "word": "some",
+        "start_time": 15.94,
+        "end_time": 16.091
+    },
+    {
+        "word": "serious",
+        "start_time": 16.173,
+        "end_time": 16.707
+    },
+    {
+        "word": "skiing",
+        "start_time": 16.753,
+        "end_time": 17.125
+    },
+    {
+        "word": "time!",
+        "start_time": 17.194,
+        "end_time": 17.659
+    }
+]

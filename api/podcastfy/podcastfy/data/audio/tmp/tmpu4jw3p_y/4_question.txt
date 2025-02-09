@@ -1,0 +1,187 @@
+[
+    {
+        "word": "Oh,",
+        "start_time": 0.035,
+        "end_time": 0.255
+    },
+    {
+        "word": "you",
+        "start_time": 0.302,
+        "end_time": 0.418
+    },
+    {
+        "word": "bet!",
+        "start_time": 0.569,
+        "end_time": 1.08
+    },
+    {
+        "word": "Runs",
+        "start_time": 1.405,
+        "end_time": 1.602
+    },
+    {
+        "word": "like",
+        "start_time": 1.649,
+        "end_time": 1.788
+    },
+    {
+        "word": "Big",
+        "start_time": 1.834,
+        "end_time": 1.985
+    },
+    {
+        "word": "Easy,",
+        "start_time": 2.055,
+        "end_time": 2.624
+    },
+    {
+        "word": "M1,",
+        "start_time": 2.775,
+        "end_time": 3.506
+    },
+    {
+        "word": "Greengates,",
+        "start_time": 3.715,
+        "end_time": 4.551
+    },
+    {
+        "word": "Shirtfront",
+        "start_time": 4.795,
+        "end_time": 5.422
+    },
+    {
+        "word": "-",
+        "start_time": 5.596,
+        "end_time": 5.631
+    },
+    {
+        "word": "even",
+        "start_time": 6.072,
+        "end_time": 6.316
+    },
+    {
+        "word": "the",
+        "start_time": 6.351,
+        "end_time": 6.42
+    },
+    {
+        "word": "legendary",
+        "start_time": 6.502,
+        "end_time": 7.059
+    },
+    {
+        "word": "Exchange",
+        "start_time": 7.105,
+        "end_time": 7.651
+    },
+    {
+        "word": "Drop",
+        "start_time": 7.686,
+        "end_time": 8.022
+    },
+    {
+        "word": "and",
+        "start_time": 8.231,
+        "end_time": 8.429
+    },
+    {
+        "word": "Back",
+        "start_time": 8.545,
+        "end_time": 8.847
+    },
+    {
+        "word": "Bowls.",
+        "start_time": 8.916,
+        "end_time": 9.497
+    },
+    {
+        "word": "It's",
+        "start_time": 10.101,
+        "end_time": 10.298
+    },
+    {
+        "word": "a",
+        "start_time": 10.344,
+        "end_time": 10.368
+    },
+    {
+        "word": "true",
+        "start_time": 10.437,
+        "end_time": 10.762
+    },
+    {
+        "word": "skier's",
+        "start_time": 10.809,
+        "end_time": 11.262
+    },
+    {
+        "word": "playground!",
+        "start_time": 11.32,
+        "end_time": 11.981
+    },
+    {
+        "word": "And,",
+        "start_time": 12.934,
+        "end_time": 13.305
+    },
+    {
+        "word": "get",
+        "start_time": 13.398,
+        "end_time": 13.584
+    },
+    {
+        "word": "this:",
+        "start_time": 13.63,
+        "end_time": 14.129
+    },
+    {
+        "word": "international",
+        "start_time": 14.64,
+        "end_time": 15.395
+    },
+    {
+        "word": "ski",
+        "start_time": 15.476,
+        "end_time": 15.732
+    },
+    {
+        "word": "races",
+        "start_time": 15.801,
+        "end_time": 16.266
+    },
+    {
+        "word": "and",
+        "start_time": 16.707,
+        "end_time": 16.939
+    },
+    {
+        "word": "world-class",
+        "start_time": 17.055,
+        "end_time": 17.937
+    },
+    {
+        "word": "athlete",
+        "start_time": 18.054,
+        "end_time": 18.541
+    },
+    {
+        "word": "training",
+        "start_time": 18.564,
+        "end_time": 18.901
+    },
+    {
+        "word": "grounds.",
+        "start_time": 18.936,
+        "end_time": 19.516
+    },
+    {
+        "word": "Serious",
+        "start_time": 20.213,
+        "end_time": 20.77
+    },
+    {
+        "word": "stuff!",
+        "start_time": 20.84,
+        "end_time": 21.432
+    }
+]

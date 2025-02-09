@@ -1,0 +1,192 @@
+[
+    {
+        "word": "Absolutely!",
+        "start_time": 0.035,
+        "end_time": 0.848
+    },
+    {
+        "word": "They",
+        "start_time": 1.358,
+        "end_time": 1.474
+    },
+    {
+        "word": "have",
+        "start_time": 1.498,
+        "end_time": 1.602
+    },
+    {
+        "word": "that",
+        "start_time": 1.625,
+        "end_time": 1.73
+    },
+    {
+        "word": "high-speed",
+        "start_time": 1.788,
+        "end_time": 2.218
+    },
+    {
+        "word": "beginner",
+        "start_time": 2.264,
+        "end_time": 2.566
+    },
+    {
+        "word": "chairlift,",
+        "start_time": 2.612,
+        "end_time": 3.216
+    },
+    {
+        "word": "plus",
+        "start_time": 3.39,
+        "end_time": 3.599
+    },
+    {
+        "word": "multiple",
+        "start_time": 3.715,
+        "end_time": 4.11
+    },
+    {
+        "word": "magic",
+        "start_time": 4.145,
+        "end_time": 4.412
+    },
+    {
+        "word": "carpet",
+        "start_time": 4.458,
+        "end_time": 4.737
+    },
+    {
+        "word": "lifts",
+        "start_time": 4.772,
+        "end_time": 4.957
+    },
+    {
+        "word": "for",
+        "start_time": 4.992,
+        "end_time": 5.085
+    },
+    {
+        "word": "the",
+        "start_time": 5.12,
+        "end_time": 5.19
+    },
+    {
+        "word": "newbies.",
+        "start_time": 5.224,
+        "end_time": 5.77
+    },
+    {
+        "word": "So,",
+        "start_time": 6.153,
+        "end_time": 6.444
+    },
+    {
+        "word": "no",
+        "start_time": 6.49,
+        "end_time": 6.594
+    },
+    {
+        "word": "excuses!",
+        "start_time": 6.653,
+        "end_time": 7.338
+    },
+    {
+        "word": "Even",
+        "start_time": 7.663,
+        "end_time": 7.906
+    },
+    {
+        "word": "you,",
+        "start_time": 7.953,
+        "end_time": 8.092
+    },
+    {
+        "word": "my",
+        "start_time": 8.115,
+        "end_time": 8.197
+    },
+    {
+        "word": "friend,",
+        "start_time": 8.266,
+        "end_time": 8.522
+    },
+    {
+        "word": "can",
+        "start_time": 8.545,
+        "end_time": 8.649
+    },
+    {
+        "word": "carve",
+        "start_time": 8.707,
+        "end_time": 8.94
+    },
+    {
+        "word": "up",
+        "start_time": 8.975,
+        "end_time": 9.056
+    },
+    {
+        "word": "the",
+        "start_time": 9.102,
+        "end_time": 9.172
+    },
+    {
+        "word": "slopes!",
+        "start_time": 9.207,
+        "end_time": 9.752
+    },
+    {
+        "word": "Plus,",
+        "start_time": 10.194,
+        "end_time": 10.786
+    },
+    {
+        "word": "kiddos",
+        "start_time": 11.029,
+        "end_time": 11.355
+    },
+    {
+        "word": "six",
+        "start_time": 11.401,
+        "end_time": 11.61
+    },
+    {
+        "word": "and",
+        "start_time": 11.668,
+        "end_time": 11.738
+    },
+    {
+        "word": "under",
+        "start_time": 11.773,
+        "end_time": 11.935
+    },
+    {
+        "word": "ski",
+        "start_time": 11.97,
+        "end_time": 12.144
+    },
+    {
+        "word": "free!",
+        "start_time": 12.225,
+        "end_time": 12.608
+    },
+    {
+        "word": "Family",
+        "start_time": 12.992,
+        "end_time": 13.34
+    },
+    {
+        "word": "fun",
+        "start_time": 13.398,
+        "end_time": 13.607
+    },
+    {
+        "word": "for",
+        "start_time": 13.665,
+        "end_time": 13.781
+    },
+    {
+        "word": "everyone!",
+        "start_time": 13.839,
+        "end_time": 14.35
+    }
+]

@@ -1,0 +1,187 @@
+[
+    {
+        "word": "Nope!",
+        "start_time": 0.035,
+        "end_time": 0.557
+    },
+    {
+        "word": "State-of-the-art",
+        "start_time": 1.068,
+        "end_time": 1.683
+    },
+    {
+        "word": "lift",
+        "start_time": 1.73,
+        "end_time": 1.916
+    },
+    {
+        "word": "system,",
+        "start_time": 1.939,
+        "end_time": 2.31
+    },
+    {
+        "word": "including",
+        "start_time": 2.334,
+        "end_time": 2.682
+    },
+    {
+        "word": "the",
+        "start_time": 2.728,
+        "end_time": 2.798
+    },
+    {
+        "word": "impressive",
+        "start_time": 2.833,
+        "end_time": 3.297
+    },
+    {
+        "word": "Coronet",
+        "start_time": 3.344,
+        "end_time": 3.669
+    },
+    {
+        "word": "Express,",
+        "start_time": 3.727,
+        "end_time": 4.435
+    },
+    {
+        "word": "a",
+        "start_time": 4.644,
+        "end_time": 4.714
+    },
+    {
+        "word": "combined",
+        "start_time": 4.783,
+        "end_time": 5.19
+    },
+    {
+        "word": "six-seater",
+        "start_time": 5.236,
+        "end_time": 5.735
+    },
+    {
+        "word": "chairlift",
+        "start_time": 5.793,
+        "end_time": 6.246
+    },
+    {
+        "word": "and",
+        "start_time": 6.281,
+        "end_time": 6.362
+    },
+    {
+        "word": "gondola!",
+        "start_time": 6.444,
+        "end_time": 7.152
+    },
+    {
+        "word": "They",
+        "start_time": 7.593,
+        "end_time": 7.744
+    },
+    {
+        "word": "can",
+        "start_time": 7.779,
+        "end_time": 7.883
+    },
+    {
+        "word": "whisk",
+        "start_time": 7.918,
+        "end_time": 8.127
+    },
+    {
+        "word": "9,000",
+        "start_time": 8.22,
+        "end_time": 8.835
+    },
+    {
+        "word": "people",
+        "start_time": 8.893,
+        "end_time": 9.137
+    },
+    {
+        "word": "uphill",
+        "start_time": 9.183,
+        "end_time": 9.462
+    },
+    {
+        "word": "every",
+        "start_time": 9.543,
+        "end_time": 9.868
+    },
+    {
+        "word": "hour!",
+        "start_time": 9.927,
+        "end_time": 10.414
+    },
+    {
+        "word": "No",
+        "start_time": 11.529,
+        "end_time": 11.691
+    },
+    {
+        "word": "long",
+        "start_time": 11.761,
+        "end_time": 11.947
+    },
+    {
+        "word": "lines",
+        "start_time": 12.005,
+        "end_time": 12.214
+    },
+    {
+        "word": "here!",
+        "start_time": 12.26,
+        "end_time": 12.55
+    },
+    {
+        "word": "They've",
+        "start_time": 12.875,
+        "end_time": 13.108
+    },
+    {
+        "word": "also",
+        "start_time": 13.131,
+        "end_time": 13.317
+    },
+    {
+        "word": "got",
+        "start_time": 13.386,
+        "end_time": 13.526
+    },
+    {
+        "word": "two",
+        "start_time": 13.572,
+        "end_time": 13.723
+    },
+    {
+        "word": "other",
+        "start_time": 13.781,
+        "end_time": 13.955
+    },
+    {
+        "word": "detachable",
+        "start_time": 14.013,
+        "end_time": 14.582
+    },
+    {
+        "word": "chairlifts",
+        "start_time": 14.617,
+        "end_time": 15.07
+    },
+    {
+        "word": "and",
+        "start_time": 15.116,
+        "end_time": 15.197
+    },
+    {
+        "word": "a",
+        "start_time": 15.244,
+        "end_time": 15.279
+    },
+    {
+        "word": "T-bar!",
+        "start_time": 15.348,
+        "end_time": 15.999
+    }
+]
