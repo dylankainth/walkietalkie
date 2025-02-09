@@ -14,14 +14,14 @@ import uuid
 from duckduckgo_search import DDGS
 import sys
 from api.podcastfy.podcastfy import client  # Import the client module
+from api.podcastfy.podcastfy.client import generate_podcast
 import re
 import pathlib
 import io
 import dotenv
-import logging
 import zipfile
 from os.path import basename
-
+import base64
 
 
 app = FastAPI()
@@ -484,6 +484,54 @@ def getPlaces(placeType: str,middle_location,radius):
     response = requests.post(url,headers=headers,data=json.dumps(data))
     return response
 
+def generatePlaceTypes(qnaText: str):
+    systemprompt = f'You are planning a route between places. You must pick 3 place types from the list below to create a route based on a few questions. You must fulfil the wishes of the user based on their answers to the questions. Give your place types in a comma separated list with no other punctuation. Do not output anything else other than this list.\n\nPlace types:\n'
+    systemprompt += f'{placetype_liststr}'
+
+    response = openAIClient.chat.completions.create(
+        messages=[
+            {
+            "role": "system",
+            "content": systemprompt,
+            },
+            {
+            "role": "user",
+            "content": qnaText,
+            },
+        ],
+        model="gpt-4o-mini",
+        max_completion_tokens=100
+    )
+    
+    genMsg = response.choices[0].message.content.strip()
+    generated_placetypes = set()
+    for placetype in (placetype.strip() for placetype in genMsg.split(",")):
+        placetypename = placetype_dict.get(placetype)
+        if placetypename != None:
+            generated_placetypes.add(placetypename)
+    return generated_placetypes
+
+def searchPlaces(generated_placetypes,start_location, end_location, radius):
+    middle_location = ((start_location[0] + end_location[0])/2,(start_location[1] + end_location[1])/2)
+    responses = {placetype: getPlaces(placetype,middle_location,radius) for placetype in generated_placetypes}
+
+    points = []
+    pointsmap = {start_location : 'START', end_location: 'END'}
+    for (placetype,typeresponse),_ in zip(responses.items(),range(3)):
+        try:
+            print(placetype)
+            currentType = []
+            for place in typeresponse.json()['places']:
+                loc = (place['location']['latitude'],place['location']['longitude'])
+                if loc not in pointsmap:
+                    currentType.append(loc)
+                pointsmap[loc] = place['displayName']['text']
+                print(f"{place['displayName']['text']} - {loc}")
+            if (len(currentType)):
+                points.append(currentType)
+        except KeyError:
+             print(typeresponse.status_code,typeresponse.json())
+    return points
 
 @app.post("/api/createRoute")
 async def createRoute(request : Request):
@@ -498,56 +546,155 @@ async def createRoute(request : Request):
     start_location = (startLocation['coords']['latitude'],startLocation['coords']['longitude'])
     end_location = (endLocation['coords']['latitude'],endLocation['coords']['longitude'])
     
-
-    systemprompt = f'You are planning a route between places. You must pick 3 place types from the list below to create a route based on a few questions. You must fulfil the wishes of the user based on their answers to the questions. Give your place types in a comma separated list with no other punctuation. Do not output anything else other than this list.\n\nPlace types:\n'
-    systemprompt += f'{placetype_liststr}'
-    userprompt = "\n".join(["Question: "+question['questionText'] + '\n' + "Answer: "+(question['answer'] if type(question['answer']) == str else ", ".join(question['answer'])) for question in questionsList])
-    #print(userprompt)
-    #print(systemprompt)
-    response = openAIClient.chat.completions.create(
-        messages=[
-            {
-            "role": "system",
-            "content": systemprompt,
-            },
-            {
-            "role": "user",
-            "content": userprompt,
-            },
-        ],
-        model="gpt-4o-mini",
-        max_completion_tokens=100
-    )
-    
-    genMsg = response.choices[0].message.content.strip()
-    generated_placetypes = set()
-    for placetype in (placetype.strip() for placetype in genMsg.split(",")):
-        placetypename = placetype_dict.get(placetype)
-        if placetypename != None:
-            generated_placetypes.add(placetypename)
+    qnaText = "\n".join(["Question: "+question['questionText'] + '\n' + "Answer: "+(question['answer'] if type(question['answer']) == str else ", ".join(question['answer'])) for question in questionsList])
+    generated_placetypes = generatePlaceTypes(qnaText)
     print(generated_placetypes)
-
-    middle_location = ((start_location[0] + end_location[0])/2,(start_location[1] + end_location[1])/2)
-    responses = {placetype: getPlaces(placetype,middle_location,radius) for placetype in generated_placetypes}
-
-    points = []
-    pointsmap = {start_location : 'START', end_location: 'END'}
-    for (placetype,typeresponse),_ in zip(responses.items(),range(3)):
-        try:
-            points.append([(place['location']['latitude'],place['location']['longitude']) for place in typeresponse.json()['places']])
-            print(placetype)
-            for place in typeresponse.json()['places']:
-                pointsmap[(place['location']['latitude'],place['location']['longitude'])] = place['displayName']['text']
-                print(f"{place['displayName']['text']} - {(place['location']['latitude'],place['location']['longitude'])}")
-        except KeyError:
-             print(typeresponse.status_code,typeresponse.json())
+    points = searchPlaces(generated_placetypes,start_location,end_location,radius)
+    print(f"Num points: {len(points)}")
+    
     
     path,distance = shortest_path_3(start_location,end_location,points,6)
-    print("Best Distance: "+distance)
+    print("Best Distance: "+str(distance))
     start = path[0]
     waypoint = path[1:-1]
     destination = path[-1]
 
     route = generate_route(start, destination, waypoint, "walking", GMAPS_API_KEY)
-    print(route)
+    print(len(route['coordinates']))
     return {"message": "Route created", "route": questionsList}
+
+
+def search_wikipedia(search_query):
+    # Python 3
+    # Choose your language, and search for articles.
+
+    language_code = 'en'
+    number_of_results = 1
+    headers = {
+    # 'Authorization': 'Bearer YOUR_ACCESS_TOKEN',
+    'User-Agent': 'Walkie Talkie (wtalkie@keanuc.net)'
+    }
+
+    base_url = 'https://api.wikimedia.org/core/v1/wikipedia/'
+    endpoint = '/search/page'
+    url = base_url + language_code + endpoint
+    parameters = {'q': search_query, 'limit': number_of_results}
+    response = requests.get(url, headers=headers, params=parameters)
+
+    response = json.loads(response.text)
+
+    page_titles = []
+    page_urls = []
+
+    for page in response['pages']:
+        page_titles.append(page['title'])
+        page_urls.append('https://' + language_code + '.wikipedia.org/wiki/' + page['key'])
+
+    most_relevant_page = get_most_relevant_page(search_query, page_titles)
+
+    print(page_titles)
+    print(page_urls)
+    print(most_relevant_page)
+
+    relevant_page_index = page_titles.index(most_relevant_page)
+
+    print(relevant_page_index)
+
+    return page_urls[relevant_page_index]
+
+def get_most_relevant_page(query, titles):
+    prompt = f"Here is a list of Wikipedia page titles: {titles}. Which one is the most relevant to the search query?"
+
+    prompt = f"""
+    Task:
+    Identify the most relevant Wikipedia article title from the given list based on the search query. Your answer should be returned as a single structured string.
+
+    Search Query: "{query}"
+    Wikipedia Titles: {titles}
+
+    Evaluation Criteria:
+
+        Exact Match (30%) – Direct or near match with the query.
+        Semantic Similarity (30%) – Does the title capture the same concept, even if phrased differently?
+        Wikipedia Naming Conventions (20%) – Would Wikipedia typically use this title?
+        Contextual Relevance (20%) – Is this the most likely intended topic?
+
+    Instructions:
+
+        Select the Best Match – Pick the title with the highest relevance score.
+        Provide a Confidence Score (0-100%) – Estimate how well the selected title fits the query.
+        Rank the Top 3 Matches (if applicable) – If multiple titles are strong candidates, list them.
+        Handle Ambiguities – If the query is unclear, suggest refinements.
+
+    Output Format (Single String):
+    "Best Match: [Title] (Confidence: X%). Alternative Matches: 1. [Title] (X%), 2. [Title] (X%). Ambiguity Notes: [Explanation, if applicable]."
+
+    If no alternative matches or ambiguity exist, omit those sections.
+    """
+
+    # Make the request to OpenAI API
+    try:
+        response = openAIClient.chat.completions.create(
+            model="gpt-4o",  # Use the suitable GPT model
+            messages=[
+                {"role": "system", "content": "You are a helpful assistant."},
+                {"role": "user", "content": prompt}
+            ]
+        )
+
+        # Log the full response for debugging
+
+        # Extract the result from the response
+        result = response.choices[0].message.content
+        if result:
+            print("Full AI Response: %s", result)
+            result = result.strip()
+
+            match = re.search(r'Best Match: ([^\(]+)', result)
+            if match:
+                final_result = match.group(1).strip()
+                return final_result
+            else:
+                return ""
+
+    except Exception as e:
+        # If parsing or any other error occurs, print the error message and the full response
+        print("Error while parsing AI response: %s", e)
+        print("Full AI Response: %s", response)  # Log the full response for further analysis
+        return ""  # Fallback to empty data
+
+@app.get("/api/createLocationTrack")
+def createLocationTrack():
+
+    place_name = "King's College, University of London"
+
+    # Search Wikipedia for URL
+    wikipedia_search_url = search_wikipedia(place_name)
+    if wikipedia_search_url == "":
+        return {"message": "No Wikipedia results found"}
+
+    print(wikipedia_search_url)
+    
+    # Search DuckDuckGo
+    # search_results = DDGS().text(place_name, max_results=5)
+    # if not search_results:
+    #     return {"message": "No Wikipedia results found"}
+
+    # Aggregate URLs
+    #+ [result['href'] for result in search_results]
+
+    # Generate podcast
+    audio_file, transcript_file = generate_podcast(urls=[wikipedia_search_url], tts_model='elevenlabs')
+
+    #read the transcript file as json
+    with open(transcript_file) as f:
+        transcriptData = json.load(f)
+    
+    #return the audio file as a base64 string
+    with open(audio_file, "rb") as audio:
+        audioData = base64.b64encode(audio.read()).decode("utf-8")
+
+    return {"data": {
+        "audio_file": audioData,
+        "transcript_file": transcriptData
+    }}

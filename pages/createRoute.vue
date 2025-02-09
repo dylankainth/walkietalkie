@@ -204,6 +204,16 @@ export default {
                 return question.answer !== ''
             })
 
+            if (!this.location.data) {
+                alert('Please get your location')
+                return
+            }
+
+            if (!this.endLocation.data) {
+                alert('Please set the end location')
+                return
+            }
+
             if (!allQuestionsAnswered) {
                 alert('Please answer all questions')
                 return

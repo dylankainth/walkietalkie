@@ -1,0 +1,1632 @@
+[
+    {
+        "word": "\"WELCOME",
+        "start_time": 0.151,
+        "end_time": 0.685
+    },
+    {
+        "word": "TO",
+        "start_time": 0.708,
+        "end_time": 0.755
+    },
+    {
+        "word": "PODCASTIFY",
+        "start_time": 0.801,
+        "end_time": 1.614
+    },
+    {
+        "word": "-",
+        "start_time": 1.73,
+        "end_time": 1.776
+    },
+    {
+        "word": "Your",
+        "start_time": 1.834,
+        "end_time": 1.997
+    },
+    {
+        "word": "Personal",
+        "start_time": 2.067,
+        "end_time": 2.461
+    },
+    {
+        "word": "Generative",
+        "start_time": 2.519,
+        "end_time": 2.902
+    },
+    {
+        "word": "AI",
+        "start_time": 2.949,
+        "end_time": 3.17
+    },
+    {
+        "word": "Podcast.",
+        "start_time": 3.239,
+        "end_time": 4.005
+    },
+    {
+        "word": "Hello,",
+        "start_time": 4.702,
+        "end_time": 4.969
+    },
+    {
+        "word": "everyone,",
+        "start_time": 4.992,
+        "end_time": 5.317
+    },
+    {
+        "word": "and",
+        "start_time": 5.341,
+        "end_time": 5.422
+    },
+    {
+        "word": "welcome!",
+        "start_time": 5.48,
+        "end_time": 5.991
+    },
+    {
+        "word": "Let's",
+        "start_time": 6.316,
+        "end_time": 6.525
+    },
+    {
+        "word": "talk",
+        "start_time": 6.56,
+        "end_time": 6.757
+    },
+    {
+        "word": "King's",
+        "start_time": 6.803,
+        "end_time": 7.024
+    },
+    {
+        "word": "College",
+        "start_time": 7.059,
+        "end_time": 7.361
+    },
+    {
+        "word": "London--",
+        "start_time": 7.396,
+        "end_time": 7.895
+    },
+    {
+        "word": "a",
+        "start_time": 8.069,
+        "end_time": 8.139
+    },
+    {
+        "word": "fascinating",
+        "start_time": 8.313,
+        "end_time": 8.928
+    },
+    {
+        "word": "institution!\"",
+        "start_time": 8.975,
+        "end_time": 9.787
+    },
+    {
+        "word": "\"Absolutely!",
+        "start_time": 9.822000000000001,
+        "end_time": 10.681000000000001
+    },
+    {
+        "word": "Founded",
+        "start_time": 10.89,
+        "end_time": 11.227
+    },
+    {
+        "word": "in",
+        "start_time": 11.273000000000001,
+        "end_time": 11.331000000000001
+    },
+    {
+        "word": "1829,",
+        "start_time": 11.378,
+        "end_time": 12.237000000000002
+    },
+    {
+        "word": "can",
+        "start_time": 12.272,
+        "end_time": 12.376000000000001
+    },
+    {
+        "word": "you",
+        "start_time": 12.411000000000001,
+        "end_time": 12.481000000000002
+    },
+    {
+        "word": "believe",
+        "start_time": 12.515,
+        "end_time": 12.759
+    },
+    {
+        "word": "it?",
+        "start_time": 12.806000000000001,
+        "end_time": 13.003
+    },
+    {
+        "word": "A",
+        "start_time": 13.444,
+        "end_time": 13.525
+    },
+    {
+        "word": "real",
+        "start_time": 13.642000000000001,
+        "end_time": 13.850000000000001
+    },
+    {
+        "word": "historical",
+        "start_time": 13.909,
+        "end_time": 14.419
+    },
+    {
+        "word": "powerhouse!\"",
+        "start_time": 14.477,
+        "end_time": 15.232000000000001
+    },
+    {
+        "word": "\"Right?",
+        "start_time": 15.267000000000001,
+        "end_time": 15.638000000000002
+    },
+    {
+        "word": "Royal",
+        "start_time": 16.242,
+        "end_time": 16.486
+    },
+    {
+        "word": "charter,",
+        "start_time": 16.544,
+        "end_time": 17.02
+    },
+    {
+        "word": "under",
+        "start_time": 17.136000000000003,
+        "end_time": 17.322000000000003
+    },
+    {
+        "word": "King",
+        "start_time": 17.368000000000002,
+        "end_time": 17.508000000000003
+    },
+    {
+        "word": "George",
+        "start_time": 17.554000000000002,
+        "end_time": 17.809
+    },
+    {
+        "word": "IV.",
+        "start_time": 17.833000000000002,
+        "end_time": 18.309
+    },
+    {
+        "word": "Talk",
+        "start_time": 18.912000000000003,
+        "end_time": 19.133000000000003
+    },
+    {
+        "word": "about",
+        "start_time": 19.168,
+        "end_time": 19.330000000000002
+    },
+    {
+        "word": "prestigious",
+        "start_time": 19.365000000000002,
+        "end_time": 19.876
+    },
+    {
+        "word": "beginnings!",
+        "start_time": 19.934,
+        "end_time": 20.561
+    },
+    {
+        "word": "That's",
+        "start_time": 20.712000000000003,
+        "end_time": 20.944000000000003
+    },
+    {
+        "word": "spelled",
+        "start_time": 20.967000000000002,
+        "end_time": 21.281000000000002
+    },
+    {
+        "word": "G-E-O-R-G-E",
+        "start_time": 21.664,
+        "end_time": 23.731
+    },
+    {
+        "word": "the",
+        "start_time": 23.847,
+        "end_time": 23.928
+    },
+    {
+        "word": "fourth,",
+        "start_time": 23.998,
+        "end_time": 24.369
+    },
+    {
+        "word": "by",
+        "start_time": 24.392000000000003,
+        "end_time": 24.485
+    },
+    {
+        "word": "the",
+        "start_time": 24.532000000000004,
+        "end_time": 24.601
+    },
+    {
+        "word": "way,",
+        "start_time": 24.636000000000003,
+        "end_time": 24.752000000000002
+    },
+    {
+        "word": "for",
+        "start_time": 24.775,
+        "end_time": 24.868000000000002
+    },
+    {
+        "word": "our",
+        "start_time": 24.903,
+        "end_time": 24.984
+    },
+    {
+        "word": "listeners.\"",
+        "start_time": 25.031,
+        "end_time": 25.611
+    },
+    {
+        "word": "\"And",
+        "start_time": 25.646,
+        "end_time": 25.866
+    },
+    {
+        "word": "don't",
+        "start_time": 25.948,
+        "end_time": 26.133
+    },
+    {
+        "word": "forget",
+        "start_time": 26.168,
+        "end_time": 26.389
+    },
+    {
+        "word": "the",
+        "start_time": 26.424,
+        "end_time": 26.493000000000002
+    },
+    {
+        "word": "Duke",
+        "start_time": 26.54,
+        "end_time": 26.726
+    },
+    {
+        "word": "of",
+        "start_time": 26.76,
+        "end_time": 26.807000000000002
+    },
+    {
+        "word": "Wellington!",
+        "start_time": 26.853,
+        "end_time": 27.573
+    },
+    {
+        "word": "Speaking",
+        "start_time": 28.014,
+        "end_time": 28.397000000000002
+    },
+    {
+        "word": "of,",
+        "start_time": 28.467,
+        "end_time": 28.664
+    },
+    {
+        "word": "did",
+        "start_time": 28.699,
+        "end_time": 28.815
+    },
+    {
+        "word": "you",
+        "start_time": 28.862000000000002,
+        "end_time": 28.931
+    },
+    {
+        "word": "know",
+        "start_time": 28.966,
+        "end_time": 29.082
+    },
+    {
+        "word": "about",
+        "start_time": 29.129,
+        "end_time": 29.303
+    },
+    {
+        "word": "the",
+        "start_time": 29.326,
+        "end_time": 29.396
+    },
+    {
+        "word": "duel?",
+        "start_time": 29.442,
+        "end_time": 29.976
+    },
+    {
+        "word": "With",
+        "start_time": 30.418,
+        "end_time": 30.568
+    },
+    {
+        "word": "the",
+        "start_time": 30.592,
+        "end_time": 30.661
+    },
+    {
+        "word": "Earl",
+        "start_time": 30.731,
+        "end_time": 30.952
+    },
+    {
+        "word": "of",
+        "start_time": 31.01,
+        "end_time": 31.056
+    },
+    {
+        "word": "Winchilsea!",
+        "start_time": 31.103,
+        "end_time": 31.938000000000002
+    },
+    {
+        "word": "It",
+        "start_time": 32.322,
+        "end_time": 32.438
+    },
+    {
+        "word": "was",
+        "start_time": 32.472,
+        "end_time": 32.554
+    },
+    {
+        "word": "over",
+        "start_time": 32.6,
+        "end_time": 32.751
+    },
+    {
+        "word": "the",
+        "start_time": 32.798,
+        "end_time": 32.867000000000004
+    },
+    {
+        "word": "college's",
+        "start_time": 32.914,
+        "end_time": 33.355000000000004
+    },
+    {
+        "word": "independence,",
+        "start_time": 33.401,
+        "end_time": 34.086
+    },
+    {
+        "word": "fascinating",
+        "start_time": 34.202,
+        "end_time": 34.818
+    },
+    {
+        "word": "stuff!\"",
+        "start_time": 34.876000000000005,
+        "end_time": 35.433
+    },
+    {
+        "word": "\"I",
+        "start_time": 35.467999999999996,
+        "end_time": 35.584
+    },
+    {
+        "word": "see,",
+        "start_time": 35.677,
+        "end_time": 35.839
+    },
+    {
+        "word": "interesting!",
+        "start_time": 35.863,
+        "end_time": 36.42
+    },
+    {
+        "word": "That",
+        "start_time": 36.861,
+        "end_time": 37.058
+    },
+    {
+        "word": "duel",
+        "start_time": 37.116,
+        "end_time": 37.337
+    },
+    {
+        "word": "is",
+        "start_time": 37.383,
+        "end_time": 37.442
+    },
+    {
+        "word": "still",
+        "start_time": 37.476,
+        "end_time": 37.639
+    },
+    {
+        "word": "commemorated,",
+        "start_time": 37.697,
+        "end_time": 38.289
+    },
+    {
+        "word": "they",
+        "start_time": 38.324,
+        "end_time": 38.452
+    },
+    {
+        "word": "call",
+        "start_time": 38.486,
+        "end_time": 38.649
+    },
+    {
+        "word": "it",
+        "start_time": 38.707,
+        "end_time": 38.8
+    },
+    {
+        "word": "\"Duel",
+        "start_time": 38.974,
+        "end_time": 39.508
+    },
+    {
+        "word": "Day!\"",
+        "start_time": 39.589,
+        "end_time": 40.17
+    },
+    {
+        "word": "So,",
+        "start_time": 40.611,
+        "end_time": 41.028999999999996
+    },
+    {
+        "word": "two",
+        "start_time": 41.272999999999996,
+        "end_time": 41.447
+    },
+    {
+        "word": "founding",
+        "start_time": 41.528,
+        "end_time": 41.818
+    },
+    {
+        "word": "colleges",
+        "start_time": 41.865,
+        "end_time": 42.283
+    },
+    {
+        "word": "of",
+        "start_time": 42.329,
+        "end_time": 42.376
+    },
+    {
+        "word": "the",
+        "start_time": 42.422,
+        "end_time": 42.492
+    },
+    {
+        "word": "University",
+        "start_time": 42.527,
+        "end_time": 42.921
+    },
+    {
+        "word": "of",
+        "start_time": 42.968,
+        "end_time": 43.014
+    },
+    {
+        "word": "London,",
+        "start_time": 43.072,
+        "end_time": 43.502
+    },
+    {
+        "word": "King's",
+        "start_time": 43.746,
+        "end_time": 44.14
+    },
+    {
+        "word": "being",
+        "start_time": 44.199,
+        "end_time": 44.408
+    },
+    {
+        "word": "one.",
+        "start_time": 44.489,
+        "end_time": 44.814
+    },
+    {
+        "word": "1836",
+        "start_time": 45.254999999999995,
+        "end_time": 46.172
+    },
+    {
+        "word": "-",
+        "start_time": 46.381,
+        "end_time": 46.416
+    },
+    {
+        "word": "That's",
+        "start_time": 46.451,
+        "end_time": 46.695
+    },
+    {
+        "word": "a",
+        "start_time": 46.730000000000004,
+        "end_time": 46.763999999999996
+    },
+    {
+        "word": "landmark",
+        "start_time": 46.879999999999995,
+        "end_time": 47.403
+    },
+    {
+        "word": "date!\"",
+        "start_time": 47.484,
+        "end_time": 47.914
+    },
+    {
+        "word": "\"It",
+        "start_time": 47.972,
+        "end_time": 48.169000000000004
+    },
+    {
+        "word": "is!",
+        "start_time": 48.239000000000004,
+        "end_time": 48.657000000000004
+    },
+    {
+        "word": "Now,",
+        "start_time": 48.866,
+        "end_time": 49.04
+    },
+    {
+        "word": "it's",
+        "start_time": 49.075,
+        "end_time": 49.226
+    },
+    {
+        "word": "HUGE!",
+        "start_time": 49.284,
+        "end_time": 49.946
+    },
+    {
+        "word": "Mergers",
+        "start_time": 50.271,
+        "end_time": 50.677
+    },
+    {
+        "word": "with",
+        "start_time": 50.712,
+        "end_time": 50.828
+    },
+    {
+        "word": "Queen",
+        "start_time": 50.875,
+        "end_time": 51.072
+    },
+    {
+        "word": "Elizabeth",
+        "start_time": 51.118,
+        "end_time": 51.501000000000005
+    },
+    {
+        "word": "College,",
+        "start_time": 51.536,
+        "end_time": 52.094
+    },
+    {
+        "word": "Chelsea",
+        "start_time": 52.21,
+        "end_time": 52.558
+    },
+    {
+        "word": "College",
+        "start_time": 52.593,
+        "end_time": 52.93
+    },
+    {
+        "word": "of",
+        "start_time": 52.964,
+        "end_time": 53.011
+    },
+    {
+        "word": "Science",
+        "start_time": 53.057,
+        "end_time": 53.371
+    },
+    {
+        "word": "and",
+        "start_time": 53.394000000000005,
+        "end_time": 53.464
+    },
+    {
+        "word": "Technology,",
+        "start_time": 53.487,
+        "end_time": 54.241
+    },
+    {
+        "word": "the",
+        "start_time": 54.392,
+        "end_time": 54.497
+    },
+    {
+        "word": "Institute",
+        "start_time": 54.567,
+        "end_time": 55.019000000000005
+    },
+    {
+        "word": "of",
+        "start_time": 55.043,
+        "end_time": 55.089
+    },
+    {
+        "word": "Psychiatry",
+        "start_time": 55.112,
+        "end_time": 55.786
+    },
+    {
+        "word": "-",
+        "start_time": 55.902,
+        "end_time": 55.936
+    },
+    {
+        "word": "so",
+        "start_time": 56.064,
+        "end_time": 56.192
+    },
+    {
+        "word": "much",
+        "start_time": 56.25,
+        "end_time": 56.424
+    },
+    {
+        "word": "growth!\"",
+        "start_time": 56.471000000000004,
+        "end_time": 56.981
+    },
+    {
+        "word": "\"Got",
+        "start_time": 57.016,
+        "end_time": 57.225
+    },
+    {
+        "word": "it.",
+        "start_time": 57.283,
+        "end_time": 57.376000000000005
+    },
+    {
+        "word": "And,",
+        "start_time": 57.434000000000005,
+        "end_time": 57.747
+    },
+    {
+        "word": "uh,",
+        "start_time": 57.77,
+        "end_time": 57.933
+    },
+    {
+        "word": "multiple",
+        "start_time": 58.107,
+        "end_time": 58.502
+    },
+    {
+        "word": "campuses!",
+        "start_time": 58.525,
+        "end_time": 59.14
+    },
+    {
+        "word": "Strand,",
+        "start_time": 59.384,
+        "end_time": 59.837
+    },
+    {
+        "word": "Guy's,",
+        "start_time": 59.872,
+        "end_time": 60.243
+    },
+    {
+        "word": "Waterloo,",
+        "start_time": 60.278,
+        "end_time": 60.789
+    },
+    {
+        "word": "St",
+        "start_time": 60.824,
+        "end_time": 60.975
+    },
+    {
+        "word": "Thomas',",
+        "start_time": 61.010000000000005,
+        "end_time": 61.532000000000004
+    },
+    {
+        "word": "Denmark",
+        "start_time": 61.706,
+        "end_time": 62.124
+    },
+    {
+        "word": "Hill!",
+        "start_time": 62.159,
+        "end_time": 62.519000000000005
+    },
+    {
+        "word": "You",
+        "start_time": 62.844,
+        "end_time": 62.96
+    },
+    {
+        "word": "know,",
+        "start_time": 62.983000000000004,
+        "end_time": 63.146
+    },
+    {
+        "word": "geographically",
+        "start_time": 63.204,
+        "end_time": 63.842
+    },
+    {
+        "word": "diverse!\"",
+        "start_time": 63.889,
+        "end_time": 64.46900000000001
+    },
+    {
+        "word": "\"For",
+        "start_time": 64.504,
+        "end_time": 64.748
+    },
+    {
+        "word": "sure!",
+        "start_time": 64.79400000000001,
+        "end_time": 65.212
+    },
+    {
+        "word": "And",
+        "start_time": 65.537,
+        "end_time": 65.7
+    },
+    {
+        "word": "the",
+        "start_time": 65.74600000000001,
+        "end_time": 65.816
+    },
+    {
+        "word": "finances?",
+        "start_time": 65.85100000000001,
+        "end_time": 66.617
+    },
+    {
+        "word": "A",
+        "start_time": 66.94200000000001,
+        "end_time": 67.01200000000001
+    },
+    {
+        "word": "billion-pound",
+        "start_time": 67.081,
+        "end_time": 67.63900000000001
+    },
+    {
+        "word": "budget?",
+        "start_time": 67.685,
+        "end_time": 68.161
+    },
+    {
+        "word": "Fourth",
+        "start_time": 68.486,
+        "end_time": 68.76500000000001
+    },
+    {
+        "word": "largest",
+        "start_time": 68.82300000000001,
+        "end_time": 69.159
+    },
+    {
+        "word": "endowment",
+        "start_time": 69.206,
+        "end_time": 69.554
+    },
+    {
+        "word": "in",
+        "start_time": 69.57700000000001,
+        "end_time": 69.62400000000001
+    },
+    {
+        "word": "the",
+        "start_time": 69.659,
+        "end_time": 69.72800000000001
+    },
+    {
+        "word": "UK!",
+        "start_time": 69.775,
+        "end_time": 70.355
+    },
+    {
+        "word": "That's",
+        "start_time": 70.73800000000001,
+        "end_time": 70.99400000000001
+    },
+    {
+        "word": "B-I-L-L-I-O-N",
+        "start_time": 71.11000000000001,
+        "end_time": 73.17600000000002
+    },
+    {
+        "word": "with",
+        "start_time": 73.23500000000001,
+        "end_time": 73.35100000000001
+    },
+    {
+        "word": "a",
+        "start_time": 73.397,
+        "end_time": 73.42000000000002
+    },
+    {
+        "word": "B!\"",
+        "start_time": 73.46700000000001,
+        "end_time": 73.93100000000001
+    },
+    {
+        "word": "\"Wow,",
+        "start_time": 74.04700000000001,
+        "end_time": 74.84800000000001
+    },
+    {
+        "word": "impressive!",
+        "start_time": 74.88300000000001,
+        "end_time": 75.58000000000001
+    },
+    {
+        "word": "And",
+        "start_time": 76.02100000000002,
+        "end_time": 76.17200000000001
+    },
+    {
+        "word": "part",
+        "start_time": 76.24100000000001,
+        "end_time": 76.43900000000001
+    },
+    {
+        "word": "of",
+        "start_time": 76.47400000000002,
+        "end_time": 76.53200000000001
+    },
+    {
+        "word": "the",
+        "start_time": 76.59000000000002,
+        "end_time": 76.659
+    },
+    {
+        "word": "'golden",
+        "start_time": 76.75200000000001,
+        "end_time": 77.19300000000001
+    },
+    {
+        "word": "triangle'",
+        "start_time": 77.24000000000001,
+        "end_time": 77.78600000000002
+    },
+    {
+        "word": "-",
+        "start_time": 77.90200000000002,
+        "end_time": 77.936
+    },
+    {
+        "word": "Oxford,",
+        "start_time": 78.14500000000001,
+        "end_time": 78.61000000000001
+    },
+    {
+        "word": "Cambridge,",
+        "start_time": 78.64500000000001,
+        "end_time": 79.132
+    },
+    {
+        "word": "London.",
+        "start_time": 79.17900000000002,
+        "end_time": 79.67800000000001
+    },
+    {
+        "word": "Elite",
+        "start_time": 79.95700000000001,
+        "end_time": 80.47900000000001
+    },
+    {
+        "word": "company!\"",
+        "start_time": 80.525,
+        "end_time": 81.08300000000001
+    },
+    {
+        "word": "\"Elite",
+        "start_time": 81.12900000000002,
+        "end_time": 81.51300000000002
+    },
+    {
+        "word": "is",
+        "start_time": 81.53600000000002,
+        "end_time": 81.60500000000002
+    },
+    {
+        "word": "right.",
+        "start_time": 81.66300000000001,
+        "end_time": 82.16300000000001
+    },
+    {
+        "word": "So,",
+        "start_time": 82.674,
+        "end_time": 82.97500000000001
+    },
+    {
+        "word": "fourteen",
+        "start_time": 83.09200000000001,
+        "end_time": 83.68400000000001
+    },
+    {
+        "word": "Nobel",
+        "start_time": 83.76500000000001,
+        "end_time": 84.07800000000002
+    },
+    {
+        "word": "laureates!",
+        "start_time": 84.13600000000001,
+        "end_time": 84.86800000000001
+    },
+    {
+        "word": "DNA",
+        "start_time": 85.19300000000001,
+        "end_time": 85.63400000000001
+    },
+    {
+        "word": "discovery",
+        "start_time": 85.69200000000001,
+        "end_time": 86.11000000000001
+    },
+    {
+        "word": "contributions,",
+        "start_time": 86.168,
+        "end_time": 87.13200000000002
+    },
+    {
+        "word": "in-vitro",
+        "start_time": 87.24800000000002,
+        "end_time": 87.79400000000001
+    },
+    {
+        "word": "fertilization,",
+        "start_time": 87.85200000000002,
+        "end_time": 88.71100000000001
+    },
+    {
+        "word": "you",
+        "start_time": 88.83800000000001,
+        "end_time": 88.95500000000001
+    },
+    {
+        "word": "name",
+        "start_time": 89.013,
+        "end_time": 89.19800000000001
+    },
+    {
+        "word": "it!",
+        "start_time": 89.24500000000002,
+        "end_time": 89.52300000000001
+    },
+    {
+        "word": "King's",
+        "start_time": 90.03400000000002,
+        "end_time": 90.32500000000002
+    },
+    {
+        "word": "has",
+        "start_time": 90.35900000000001,
+        "end_time": 90.44100000000002
+    },
+    {
+        "word": "been",
+        "start_time": 90.48700000000001,
+        "end_time": 90.60300000000001
+    },
+    {
+        "word": "at",
+        "start_time": 90.626,
+        "end_time": 90.68400000000001
+    },
+    {
+        "word": "the",
+        "start_time": 90.70800000000001,
+        "end_time": 90.77700000000002
+    },
+    {
+        "word": "forefront.\"",
+        "start_time": 90.82400000000001,
+        "end_time": 91.45100000000001
+    },
+    {
+        "word": "\"Definitely",
+        "start_time": 91.486,
+        "end_time": 92.066
+    },
+    {
+        "word": "groundbreaking",
+        "start_time": 92.12400000000001,
+        "end_time": 92.70500000000001
+    },
+    {
+        "word": "research!",
+        "start_time": 92.775,
+        "end_time": 93.37800000000001
+    },
+    {
+        "word": "They",
+        "start_time": 93.819,
+        "end_time": 93.947
+    },
+    {
+        "word": "even",
+        "start_time": 93.97000000000001,
+        "end_time": 94.11000000000001
+    },
+    {
+        "word": "have",
+        "start_time": 94.13300000000001,
+        "end_time": 94.23700000000001
+    },
+    {
+        "word": "the",
+        "start_time": 94.272,
+        "end_time": 94.34200000000001
+    },
+    {
+        "word": "world's",
+        "start_time": 94.412,
+        "end_time": 94.72500000000001
+    },
+    {
+        "word": "first",
+        "start_time": 94.795,
+        "end_time": 95.05000000000001
+    },
+    {
+        "word": "nursing",
+        "start_time": 95.108,
+        "end_time": 95.456
+    },
+    {
+        "word": "school!",
+        "start_time": 95.51400000000001,
+        "end_time": 95.99100000000001
+    },
+    {
+        "word": "Founded",
+        "start_time": 96.432,
+        "end_time": 96.78
+    },
+    {
+        "word": "by",
+        "start_time": 96.80300000000001,
+        "end_time": 96.89600000000002
+    },
+    {
+        "word": "Florence",
+        "start_time": 96.989,
+        "end_time": 97.40700000000001
+    },
+    {
+        "word": "Nightingale",
+        "start_time": 97.453,
+        "end_time": 97.906
+    },
+    {
+        "word": "herself!\"",
+        "start_time": 97.941,
+        "end_time": 98.614
+    },
+    {
+        "word": "\"Imagine",
+        "start_time": 98.684,
+        "end_time": 99.16000000000001
+    },
+    {
+        "word": "the",
+        "start_time": 99.183,
+        "end_time": 99.253
+    },
+    {
+        "word": "history",
+        "start_time": 99.299,
+        "end_time": 99.62400000000001
+    },
+    {
+        "word": "within",
+        "start_time": 99.659,
+        "end_time": 99.879
+    },
+    {
+        "word": "those",
+        "start_time": 99.914,
+        "end_time": 100.08800000000001
+    },
+    {
+        "word": "walls.",
+        "start_time": 100.135,
+        "end_time": 100.75
+    },
+    {
+        "word": "And",
+        "start_time": 101.191,
+        "end_time": 101.366
+    },
+    {
+        "word": "the",
+        "start_time": 101.412,
+        "end_time": 101.482
+    },
+    {
+        "word": "alumni?",
+        "start_time": 101.516,
+        "end_time": 102.155
+    },
+    {
+        "word": "Heads",
+        "start_time": 102.666,
+        "end_time": 102.88600000000001
+    },
+    {
+        "word": "of",
+        "start_time": 102.921,
+        "end_time": 102.968
+    },
+    {
+        "word": "state,",
+        "start_time": 103.01400000000001,
+        "end_time": 103.37400000000001
+    },
+    {
+        "word": "MPs,",
+        "start_time": 103.409,
+        "end_time": 104.059
+    },
+    {
+        "word": "Oscar",
+        "start_time": 104.117,
+        "end_time": 104.45400000000001
+    },
+    {
+        "word": "winners!",
+        "start_time": 104.489,
+        "end_time": 104.965
+    },
+    {
+        "word": "Talk",
+        "start_time": 105.116,
+        "end_time": 105.37100000000001
+    },
+    {
+        "word": "about",
+        "start_time": 105.406,
+        "end_time": 105.568
+    },
+    {
+        "word": "a",
+        "start_time": 105.592,
+        "end_time": 105.61500000000001
+    },
+    {
+        "word": "powerful",
+        "start_time": 105.65,
+        "end_time": 105.998
+    },
+    {
+        "word": "network!\"",
+        "start_time": 106.05600000000001,
+        "end_time": 106.64800000000001
+    },
+    {
+        "word": "\"Um,",
+        "start_time": 106.683,
+        "end_time": 107.031
+    },
+    {
+        "word": "you",
+        "start_time": 107.18200000000002,
+        "end_time": 107.25200000000001
+    },
+    {
+        "word": "know,",
+        "start_time": 107.275,
+        "end_time": 107.47200000000001
+    },
+    {
+        "word": "the",
+        "start_time": 107.519,
+        "end_time": 107.61200000000001
+    },
+    {
+        "word": "Maughan",
+        "start_time": 107.69300000000001,
+        "end_time": 107.983
+    },
+    {
+        "word": "Library!",
+        "start_time": 108.05300000000001,
+        "end_time": 108.715
+    },
+    {
+        "word": "Converted",
+        "start_time": 109.09800000000001,
+        "end_time": 109.45800000000001
+    },
+    {
+        "word": "from",
+        "start_time": 109.48100000000001,
+        "end_time": 109.58500000000001
+    },
+    {
+        "word": "the",
+        "start_time": 109.62,
+        "end_time": 109.69000000000001
+    },
+    {
+        "word": "Public",
+        "start_time": 109.71300000000001,
+        "end_time": 109.95700000000001
+    },
+    {
+        "word": "Record",
+        "start_time": 110.00300000000001,
+        "end_time": 110.23500000000001
+    },
+    {
+        "word": "Office?",
+        "start_time": 110.27000000000001,
+        "end_time": 110.68800000000002
+    },
+    {
+        "word": "Stunning",
+        "start_time": 111.07100000000001,
+        "end_time": 111.47800000000001
+    },
+    {
+        "word": "architecture!\"",
+        "start_time": 111.53600000000002,
+        "end_time": 112.209
+    },
+    {
+        "word": "\"Right?",
+        "start_time": 112.244,
+        "end_time": 112.824
+    },
+    {
+        "word": "And",
+        "start_time": 113.068,
+        "end_time": 113.20700000000001
+    },
+    {
+        "word": "I",
+        "start_time": 113.266,
+        "end_time": 113.289
+    },
+    {
+        "word": "think",
+        "start_time": 113.34700000000001,
+        "end_time": 113.509
+    },
+    {
+        "word": "it",
+        "start_time": 113.544,
+        "end_time": 113.602
+    },
+    {
+        "word": "was",
+        "start_time": 113.637,
+        "end_time": 113.73
+    },
+    {
+        "word": "featured",
+        "start_time": 113.788,
+        "end_time": 114.113
+    },
+    {
+        "word": "in",
+        "start_time": 114.148,
+        "end_time": 114.206
+    },
+    {
+        "word": "some",
+        "start_time": 114.26400000000001,
+        "end_time": 114.415
+    },
+    {
+        "word": "movies!",
+        "start_time": 114.438,
+        "end_time": 115.123
+    },
+    {
+        "word": "I",
+        "start_time": 115.402,
+        "end_time": 115.44800000000001
+    },
+    {
+        "word": "have",
+        "start_time": 115.529,
+        "end_time": 115.657
+    },
+    {
+        "word": "to",
+        "start_time": 115.68,
+        "end_time": 115.727
+    },
+    {
+        "word": "double-check",
+        "start_time": 115.773,
+        "end_time": 116.191
+    },
+    {
+        "word": "that,",
+        "start_time": 116.238,
+        "end_time": 116.38900000000001
+    },
+    {
+        "word": "though.\"",
+        "start_time": 116.412,
+        "end_time": 116.83
+    },
+    {
+        "word": "\"Maybe.",
+        "start_time": 116.876,
+        "end_time": 117.48
+    },
+    {
+        "word": "But",
+        "start_time": 117.92099999999999,
+        "end_time": 118.04899999999999
+    },
+    {
+        "word": "let's",
+        "start_time": 118.084,
+        "end_time": 118.223
+    },
+    {
+        "word": "not",
+        "start_time": 118.258,
+        "end_time": 118.351
+    },
+    {
+        "word": "forget",
+        "start_time": 118.386,
+        "end_time": 118.571
+    },
+    {
+        "word": "the",
+        "start_time": 118.606,
+        "end_time": 118.676
+    },
+    {
+        "word": "rivalry!",
+        "start_time": 118.757,
+        "end_time": 119.396
+    },
+    {
+        "word": "King's",
+        "start_time": 119.64,
+        "end_time": 119.941
+    },
+    {
+        "word": "and",
+        "start_time": 119.976,
+        "end_time": 120.04599999999999
+    },
+    {
+        "word": "UCL.",
+        "start_time": 120.116,
+        "end_time": 120.731
+    },
+    {
+        "word": "The",
+        "start_time": 120.975,
+        "end_time": 121.079
+    },
+    {
+        "word": "London",
+        "start_time": 121.149,
+        "end_time": 121.416
+    },
+    {
+        "word": "Varsity!",
+        "start_time": 121.462,
+        "end_time": 122.04299999999999
+    },
+    {
+        "word": "I've",
+        "start_time": 122.426,
+        "end_time": 122.6
+    },
+    {
+        "word": "heard",
+        "start_time": 122.623,
+        "end_time": 122.774
+    },
+    {
+        "word": "stories...\"",
+        "start_time": 122.821,
+        "end_time": 123.459
+    },
+    {
+        "word": "\"Oh,",
+        "start_time": 123.494,
+        "end_time": 123.76100000000001
+    },
+    {
+        "word": "the",
+        "start_time": 123.784,
+        "end_time": 123.854
+    },
+    {
+        "word": "mascot",
+        "start_time": 123.912,
+        "end_time": 124.307
+    },
+    {
+        "word": "shenanigans!",
+        "start_time": 124.34100000000001,
+        "end_time": 125.177
+    },
+    {
+        "word": "Reggie",
+        "start_time": 125.61800000000001,
+        "end_time": 125.92
+    },
+    {
+        "word": "the",
+        "start_time": 125.944,
+        "end_time": 126.013
+    },
+    {
+        "word": "Lion",
+        "start_time": 126.071,
+        "end_time": 126.408
+    },
+    {
+        "word": "versus...",
+        "start_time": 126.47800000000001,
+        "end_time": 127.15100000000001
+    },
+    {
+        "word": "well,",
+        "start_time": 127.662,
+        "end_time": 128.01
+    },
+    {
+        "word": "UCL's",
+        "start_time": 128.219,
+        "end_time": 128.742
+    },
+    {
+        "word": "mascot",
+        "start_time": 128.8,
+        "end_time": 129.264
+    },
+    {
+        "word": "has",
+        "start_time": 129.31,
+        "end_time": 129.415
+    },
+    {
+        "word": "had",
+        "start_time": 129.461,
+        "end_time": 129.577
+    },
+    {
+        "word": "a",
+        "start_time": 129.612,
+        "end_time": 129.636
+    },
+    {
+        "word": "few",
+        "start_time": 129.68200000000002,
+        "end_time": 129.833
+    },
+    {
+        "word": "iterations.\"",
+        "start_time": 129.879,
+        "end_time": 130.75
+    },
+    {
+        "word": "\"Indeed!",
+        "start_time": 130.796,
+        "end_time": 131.319
+    },
+    {
+        "word": "A",
+        "start_time": 131.342,
+        "end_time": 131.377
+    },
+    {
+        "word": "rich",
+        "start_time": 131.47,
+        "end_time": 131.656
+    },
+    {
+        "word": "history,",
+        "start_time": 131.69,
+        "end_time": 132.062
+    },
+    {
+        "word": "impressive",
+        "start_time": 132.085,
+        "end_time": 132.55
+    },
+    {
+        "word": "achievements.",
+        "start_time": 132.584,
+        "end_time": 133.246
+    },
+    {
+        "word": "King's",
+        "start_time": 133.571,
+        "end_time": 133.85
+    },
+    {
+        "word": "College",
+        "start_time": 133.896,
+        "end_time": 134.198
+    },
+    {
+        "word": "London",
+        "start_time": 134.245,
+        "end_time": 134.512
+    },
+    {
+        "word": "truly",
+        "start_time": 134.558,
+        "end_time": 134.837
+    },
+    {
+        "word": "makes",
+        "start_time": 134.883,
+        "end_time": 135.081
+    },
+    {
+        "word": "its",
+        "start_time": 135.127,
+        "end_time": 135.243
+    },
+    {
+        "word": "mark.\"",
+        "start_time": 135.29,
+        "end_time": 135.696
+    },
+    {
+        "word": "A",
+        "start_time": 136.137,
+        "end_time": 136.23
+    },
+    {
+        "word": "good",
+        "start_time": 136.311,
+        "end_time": 136.497
+    },
+    {
+        "word": "bye",
+        "start_time": 136.543,
+        "end_time": 136.764
+    },
+    {
+        "word": "message!",
+        "start_time": 136.822,
+        "end_time": 137.344
+    },
+    {
+        "word": "Bye",
+        "start_time": 137.402,
+        "end_time": 137.53
+    },
+    {
+        "word": "Bye!",
+        "start_time": 137.553,
+        "end_time": 137.89
+    }
+]

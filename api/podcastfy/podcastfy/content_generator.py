@@ -199,7 +199,7 @@ class LongFormContentGenerator:
         # Add part-specific instructions
         if part_idx == 0:
             enhanced_params["instruction"] = f"""
-            ALWAYS START THE CONVERSATION GREETING THE AUDIENCE: Welcome to {enhanced_params["podcast_name"]} - {enhanced_params["podcast_tagline"]}.
+            ALWAYS START THE CONVERSATION GREETING THE AUDIENCE: You're listening to: Walkie Talkie!
             You are generating the Introduction part of a long podcast conversation.
             Don't cover any topics yet, just introduce yourself and the topic. Leave the rest for later parts, following these guidelines:
             """
