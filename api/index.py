@@ -22,7 +22,9 @@ import dotenv
 import zipfile
 from os.path import basename
 import base64
+import jwt
 
+ROUTE = None
 
 app = FastAPI()
 load_dotenv("./.env")  # take environment variables from .env.
@@ -41,7 +43,7 @@ def generate_route(origin, destination, waypoints, mode, api_key):
     response = requests.get(base_url, params = param)  
     result = response.json()
 
-    
+     
     #print(result)
 
     if result["status"] == "OK":
@@ -116,7 +118,8 @@ def short_path_one_group(start, end, groups,expected_distance):
                 min_distance = distance
                 best_path = [start, point, end]
                 if distance <= expected_distance:
-                        return best_path,min_distance
+                    pass
+                    #return best_path,min_distance
 
     return best_path,min_distance
 
@@ -142,7 +145,8 @@ def short_path_2(start, end, groups,expected_distance):
                     min_distance = distance
                     best_path = [start] + list(perm) + [end]
                     if distance <= expected_distance:
-                        return best_path,min_distance
+                        pass
+                        #return best_path,min_distance
 
     return best_path,min_distance
 
@@ -164,8 +168,9 @@ def short_path_3(start,end,groups,expected_distance):
                 min_distance = distance
                 best_path = perm
                 if distance <= expected_distance:
+                    pass
+                    #return [start] + list(best_path)+ [end],min_distance
                     
-                    return [start] + list(best_path)+ [end],min_distance
     #if the path containing all 3 groups is too long
     if expected_distance < min_distance:
         best_path,min_distance = short_path_2(start,end,groups,expected_distance)
@@ -186,6 +191,9 @@ openAIClient = OpenAI(api_key=OPENAI_API_KEY)
 db = client.get_database(MONGO_DBNAME)  # Replace with your DB name if needed
 questions_collection = db.questions
 
+# Secret key (KEEP THIS SECRET!)
+SECRET_KEY = os.getenv("AUTH_SECRET") # From your Nuxt config
+ALGORITHM = "HS256"  # Or the algorithm you're using
 
 def getPlaceTypes():
     placetypes = """art_gallery
@@ -374,32 +382,11 @@ def hello_world():
 @app.get("/api/getRoutes")
 def getRoutes():
 
-    routes = [
-        {
-            "_id": 1,
-            "name": "Route 1",
-            "timestamp": datetime.now().isoformat(),
-            "city": "New York"
-        },
-         {
-            "_id": 2,
-            "name": "Route 66",
-            "timestamp": datetime.now().isoformat(),
-            "city": "New York"
-        },
-         {
-            "_id": 3,
-            "name": "Route 101",
-            "timestamp": datetime.now().isoformat(),
-            "city": "London"
-        },
-         {
-            "_id": 4,
-            "name": "Route 53",
-            "timestamp": datetime.now().isoformat(),
-            "city": "Paris"
-        }
-    ]
+    global ROUTE
+    routes = [ROUTE]
+
+    if ROUTE == None:
+        routes = [{}]
 
     return {"body": routes}
 
@@ -550,7 +537,6 @@ def generatePlaces(qnaText,start_location,end_location,radius):
             break
     return points
 
-
 @app.post("/api/createRoute")
 async def createRoute(request : Request):
 
@@ -597,16 +583,27 @@ async def createRoute(request : Request):
         pass
 
     namelist = [pointsmap.get(point) for point in path]
-    print("PATH: " + str([pointsmap.get(point) for point in path]))
-
-
+    print("PATH: " + str(namelist))
+    namelist = namelist[1:-1]
+    namestr = "-> "
+    for name in namelist:
+        namestr += str(name[0]) + " -> "
+    namestr.strip()
+    
+    if (len(namestr) > 25):
+        diff = len(namestr) - 25
+        middle_index = len(namestr) // 2  # Find the middle of the string
+        namestr = namestr[:middle_index-(diff//2)] + "..." + namestr[middle_index+(diff//2):]  # Remove 5 characters in the middle
+    
     start = path[0]
     waypoint = path[1:-1]
     destination = path[-1]
 
-    route = generate_route(start, destination, waypoint, "walking", GMAPS_API_KEY)
+    global ROUTE
+    ROUTE = {'name': namestr,'city': locationName,'lines': generate_route(start, destination, waypoint, "walking", GMAPS_API_KEY)}
 
-    return {"message": "Route created", "route": route,"status":"success"}
+
+    return {"message": "Route created", "route": ROUTE,"status":"success"}
 
 
 def search_wikipedia(search_query):

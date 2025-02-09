@@ -6,7 +6,7 @@ pymongo==4.8.0
 openai==1.61.1
 requests
 duckduckgo-search
-
+pyjwt
 
 aiohappyeyeballs==2.4.3 ; python_version >= "3.11" and python_version < "4.0"
 aiohttp==3.10.10 ; python_version >= "3.11" and python_version < "4.0"

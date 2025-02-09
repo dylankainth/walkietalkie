@@ -29,8 +29,7 @@ export default defineNuxtConfig({
       trustHost: false,
       defaultProvider: 'google',
       addDefaultCallbackUrl: true,
-    },
-
+    }
   },
   nitro: {
     vercel: {

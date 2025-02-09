@@ -1,6 +1,7 @@
 import { NuxtAuthHandler } from '#auth'
 import GoogleProvider from 'next-auth/providers/google'
 import { MongoClient } from 'mongodb'; // Import MongoDB client
+import { getToken } from '#auth'
 
 // MongoDB connection setup (do this outside the handler for efficiency)
 const uri = process.env.MONGODB_URI; // Your MongoDB connection string
@@ -21,7 +22,10 @@ export default NuxtAuthHandler({
         })
     ],
     callbacks: {
-        async signIn({ user, account, profile }) {
+        async jwt({ token, account, profile }) {
+            return token
+        },
+        async signIn({ user, account, profile, }) {
             let mongoClient: MongoClient | null = null;
             try {
                 mongoClient = new MongoClient(uri);
@@ -45,7 +49,9 @@ export default NuxtAuthHandler({
                         await usersCollection.insertOne({
                             name: user.name, // Or profile.name if available
                             email: user.email,
-                            providerId: user.id // The provider ID
+                            account: account, // The account ID
+                            providerId: user.id, // The provider ID
+
                         });
                     }
                 } catch (error) {

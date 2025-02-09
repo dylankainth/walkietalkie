@@ -161,7 +161,9 @@
 </template>
 
 <script>
+
 export default {
+
     data() {
         return {
             loadedQuestions: false,
@@ -285,7 +287,11 @@ export default {
     async mounted() {
 
         const response = await fetch('/api/generateQuestions', {
-            method: 'GET'
+            method: 'GET',
+            // write the auth token to the header
+            // headers: {
+            //     'Authorization': `Bearer ${}`
+            // }
         })
         const responseData = await response.json()
         this.questionsList = responseData.body
