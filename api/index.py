@@ -612,7 +612,7 @@ async def createRoute(request : Request):
     global ROUTES
     ROUTES.append({'name': namestr, 'route_id': route_id, 'city': locationName,'lines': generate_route(start, destination, waypoint, "walking", GMAPS_API_KEY)})
     
-    return {"message": "Route created", "route": "estset","status":"success"}
+    return {"message": "Route created", "route_id": route_id,"status":"success"}
 
 
 def search_wikipedia(search_query):

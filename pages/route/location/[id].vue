@@ -7,11 +7,13 @@
                 :src="'data:audio/mp3;base64,' + placeInfo.data.audio_file" @timeupdate="updateCurrentTime"> </audio>
 
             <h1>Transcript</h1>
-            <p>
-                <span v-for="(timedWord, index) in placeInfo.data.transcript_file" :key="index"> <span
-                        :class="{ 'highlighted': currentTime >= timedWord.start_time }"> {{ timedWord.word }}
+            <p class="transcript">
+                <span v-for="(timedWord, index) in placeInfo.data.transcript_file" :key="index">
+                    <span :class="{ 'highlighted': currentTime >= timedWord.start_time }">
+                        {{ timedWord.word }}
                     </span>
-                    <span> </span> </span>
+                    <span> &nbsp; </span>
+                </span>
             </p>
         </div>
     </div>

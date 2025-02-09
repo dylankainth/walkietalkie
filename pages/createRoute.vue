@@ -238,7 +238,7 @@ export default {
                 const createRouteResponse = await createRouteData.json()
 
                 if (createRouteResponse.status === 'success') {
-                    this.$router.push(`/route/${createRouteResponse.body.route_id}`)
+                    this.$router.push(`/route/${createRouteResponse.route_id}`)
                 } else if (createRouteResponse.status === 'error') {
                     this.$router.push(`/error`)
                 }
