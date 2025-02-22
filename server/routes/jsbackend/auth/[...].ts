@@ -13,7 +13,7 @@ if (!uri) {
 
 export default NuxtAuthHandler({
     // A secret string you define, to ensure correct encryption
-    secret: process.env.AUTH_SECRET,
+    secret: "ab234242342rdw345324dc",
     providers: [
         // @ts-expect-error Use .default here for it to work during SSR.
         GoogleProvider.default({
